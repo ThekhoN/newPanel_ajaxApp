@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <button id="fb_button">click</button>
+
+<script>
+  var _fb_button = document.getElementById('fb_button');
+  _fb_button.addEventListener('click', fb_publishEvents );
+
+
+  function fb_publishEvents() {
+      FB.init({
+        appId      : '685662254927307',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+     FB.ui(
+       {
+         method: 'stream.publish',
+         message: 'Message here.',
+         attachment: {
+           name: 'Name here',
+           caption: 'Caption here.',
+           description: (
+             'description here'
+           ),
+           href: 'url here'
+         },
+         action_links: [
+           { text: 'Code', href: 'action url here' }
+         ],
+         user_prompt_message: 'Personal message here'
+       },
+       function(response) {
+         if (response && response.post_id) {
+           alert('Post was published.');
+         } else {
+           alert('Post was not published.');
+         }
+       }
+     );
+  }
+
+
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</body>
+</html>

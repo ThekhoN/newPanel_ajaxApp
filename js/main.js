@@ -9,7 +9,7 @@ import Use_firstResponseData from './modules/Use_firstResponseData_singleReq';
 import SocialShare_page from './modules/SocialShare_page';
 import TimerX99 from './modules/TimerX99';
 import fadeOut_inactive from './modules/fadeOut_inactive';
-
+import {preLoader_animation} from './modules/fadeOut_inactive';
 //expose
 window.TimerX99 = TimerX99;
 
@@ -65,6 +65,7 @@ class AjaxPageApp {
       XHR_req(this.url,function(data){Use_firstResponseData(data, O_O);});
     }
     else {
+        preLoader_animation();
         fadeOut_inactive();
         window.myFastdomX99 = fastdom.extend(fastdomPromised);
         console.log('running axios. . .');

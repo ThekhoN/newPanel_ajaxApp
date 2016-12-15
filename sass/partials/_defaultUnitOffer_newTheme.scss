@@ -92,27 +92,6 @@ a.offerUnit_href {
     }
 
   }
-
-  /*
-  img.b-lazy.b-loaded {
-    width: 100%;
-    height: auto;
-  }
-  */
-
-
-  /*
-  //fuckme
-  img {
-    width:$fximgSize_w_small;
-    height:$fximgSize_h_small;
-
-    @include breakpoint(768px){
-      width: $fximgSize_w;
-      height: $fximgSize_h;
-    }
-  }
-  */
 }
 
 .fixedImageWrapperX99 {
@@ -278,7 +257,7 @@ span.numberRevsX {
   text-align: left;
   margin-bottom: 2px;
   height: 17px;
-  display: none;
+  //display: none;
 
   @include breakpoint(768px){
     margin-bottom: 5px ;
@@ -421,6 +400,7 @@ span.offerUnit_displayPrice {
   text-align: left;
   position: relative;
   overflow: visible !important;
+  margin-top: 20px !important;
 
   @include breakpoint(640px){
     padding: 0.2em $padleftVal_univ 0.2em $padleftVal_univ;
@@ -495,7 +475,8 @@ span.offerUnit_displayPrice {
 .twoLine_TitleX99:after {
   content:'';
   position: absolute;
-  height: 4px;
+  //height: 4px;
+  height: 6px;
   width: 100%;
   background: white;
   z-index: 1;

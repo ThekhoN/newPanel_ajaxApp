@@ -4,7 +4,7 @@ import Blazy from 'blazy';
 import MobPlatformCheck from './MobPlatformCheck';
 import _showAdditionalRatingOpts from './_showAdditionalRatingOpts';
 import fadeIn_active from './fadeIn_active';
-//import fadeOut_inactive from './fadeOut_inactive';
+import fadeOut_inactive from './fadeOut_inactive';
 
 function isISObject(obj){
   return obj && obj !== 'null' && obj !== 'undefined';
@@ -83,7 +83,7 @@ const createHTML_by_categoryNames = (O_O, dataForRender) => {
             }
         })
         .then(function () {
-            //fadeOut_inactive();
+            //fadeOut_inactive(); not here
             setTimeout(function () {
                 fadeIn_active();
             }, 10);

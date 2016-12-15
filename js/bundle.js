@@ -68,15 +68,15 @@
 
 	var _Use_firstResponseData_singleReq2 = _interopRequireDefault(_Use_firstResponseData_singleReq);
 
-	var _SocialShare_page = __webpack_require__(35);
+	var _SocialShare_page = __webpack_require__(36);
 
 	var _SocialShare_page2 = _interopRequireDefault(_SocialShare_page);
 
-	var _TimerX = __webpack_require__(36);
+	var _TimerX = __webpack_require__(37);
 
 	var _TimerX2 = _interopRequireDefault(_TimerX);
 
-	var _fadeOut_inactive = __webpack_require__(40);
+	var _fadeOut_inactive = __webpack_require__(38);
 
 	var _fadeOut_inactive2 = _interopRequireDefault(_fadeOut_inactive);
 
@@ -85,10 +85,9 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	//polyfill es6-promise
-	__webpack_require__(37).polyfill();
+	__webpack_require__(40).polyfill();
 
-	var fastdom = __webpack_require__(39);
-
+	var fastdom = __webpack_require__(42);
 
 	//expose
 	window.TimerX99 = _TimerX2.default;
@@ -150,6 +149,7 @@
 	          (0, _Use_firstResponseData_singleReq2.default)(data, O_O);
 	        });
 	      } else {
+	        (0, _fadeOut_inactive.preLoader_animation)();
 	        (0, _fadeOut_inactive2.default)();
 	        window.myFastdomX99 = fastdom.extend(fastdomPromised);
 	        console.log('running axios. . .');
@@ -2060,15 +2060,17 @@
 
 	var _showAdditionalRatingOpts3 = _interopRequireDefault(_showAdditionalRatingOpts2);
 
-	var _fadeIn_active = __webpack_require__(41);
+	var _fadeIn_active = __webpack_require__(35);
 
 	var _fadeIn_active2 = _interopRequireDefault(_fadeIn_active);
+
+	var _fadeOut_inactive = __webpack_require__(38);
+
+	var _fadeOut_inactive2 = _interopRequireDefault(_fadeOut_inactive);
 
 	function _interopRequireDefault(obj) {
 	  return obj && obj.__esModule ? obj : { default: obj };
 	}
-
-	//import fadeOut_inactive from './fadeOut_inactive';
 
 	function isISObject(obj) {
 	  return obj && obj !== 'null' && obj !== 'undefined';
@@ -2147,7 +2149,7 @@
 	        //_showAdditionalRatingOpts();
 	      }
 	    }).then(function () {
-	      //fadeOut_inactive();
+	      //fadeOut_inactive(); not here
 	      setTimeout(function () {
 	        (0, _fadeIn_active2.default)();
 	      }, 10);
@@ -3071,6 +3073,25 @@
 
 /***/ },
 /* 35 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var fadeIn_active = function fadeIn_active() {
+	  var _OfferUnitX99 = document.getElementsByClassName('OfferUnitX99');
+	  for (var i = 0; i < _OfferUnitX99.length; i++) {
+	    _OfferUnitX99[i].classList.remove('invisX99');
+	  }
+	  //console.log('fadingIn_active . . .');
+	};
+
+	exports.default = fadeIn_active;
+
+/***/ },
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3176,7 +3197,7 @@
 	exports.default = SocialShare_page;
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3425,7 +3446,289 @@
 	exports.default = TimerX99;
 
 /***/ },
-/* 37 */
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.preLoader_animation = undefined;
+
+	var _classlistPolyfill = __webpack_require__(39);
+
+	var _classlistPolyfill2 = _interopRequireDefault(_classlistPolyfill);
+
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
+
+	var _inactive = document.getElementsByClassName('inactive');
+
+	var fadeOut_inactive = function fadeOut_inactive() {
+	  //console.log('addClass fadeOut...');
+	  for (var i = 0; i < _inactive.length; i++) {
+	    _inactive[i].classList.add('fadeOutx99');
+	  }
+	};
+
+	exports.default = fadeOut_inactive;
+	var preLoader_animation = exports.preLoader_animation = function preLoader_animation() {
+	  for (var i = 0; i < _inactive.length; i++) {
+	    _inactive[i].classList.add('preData_loading');
+	  }
+	};
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	/*
+	 * classList.js: Cross-browser full element.classList implementation.
+	 * 2014-07-23
+	 *
+	 * By Eli Grey, http://eligrey.com
+	 * Public Domain.
+	 * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+	 */
+
+	/*global self, document, DOMException */
+
+	/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
+
+	/* Copied from MDN:
+	 * https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+	 */
+
+	if ("document" in window.self) {
+
+	  // Full polyfill for browsers with no classList support
+	  // Including IE < Edge missing SVGElement.classList
+	  if (!("classList" in document.createElement("_"))
+	    || document.createElementNS && !("classList" in document.createElementNS("http://www.w3.org/2000/svg","g"))) {
+
+	  (function (view) {
+
+	    "use strict";
+
+	    if (!('Element' in view)) return;
+
+	    var
+	        classListProp = "classList"
+	      , protoProp = "prototype"
+	      , elemCtrProto = view.Element[protoProp]
+	      , objCtr = Object
+	      , strTrim = String[protoProp].trim || function () {
+	        return this.replace(/^\s+|\s+$/g, "");
+	      }
+	      , arrIndexOf = Array[protoProp].indexOf || function (item) {
+	        var
+	            i = 0
+	          , len = this.length
+	        ;
+	        for (; i < len; i++) {
+	          if (i in this && this[i] === item) {
+	            return i;
+	          }
+	        }
+	        return -1;
+	      }
+	      // Vendors: please allow content code to instantiate DOMExceptions
+	      , DOMEx = function (type, message) {
+	        this.name = type;
+	        this.code = DOMException[type];
+	        this.message = message;
+	      }
+	      , checkTokenAndGetIndex = function (classList, token) {
+	        if (token === "") {
+	          throw new DOMEx(
+	              "SYNTAX_ERR"
+	            , "An invalid or illegal string was specified"
+	          );
+	        }
+	        if (/\s/.test(token)) {
+	          throw new DOMEx(
+	              "INVALID_CHARACTER_ERR"
+	            , "String contains an invalid character"
+	          );
+	        }
+	        return arrIndexOf.call(classList, token);
+	      }
+	      , ClassList = function (elem) {
+	        var
+	            trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
+	          , classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
+	          , i = 0
+	          , len = classes.length
+	        ;
+	        for (; i < len; i++) {
+	          this.push(classes[i]);
+	        }
+	        this._updateClassName = function () {
+	          elem.setAttribute("class", this.toString());
+	        };
+	      }
+	      , classListProto = ClassList[protoProp] = []
+	      , classListGetter = function () {
+	        return new ClassList(this);
+	      }
+	    ;
+	    // Most DOMException implementations don't allow calling DOMException's toString()
+	    // on non-DOMExceptions. Error's toString() is sufficient here.
+	    DOMEx[protoProp] = Error[protoProp];
+	    classListProto.item = function (i) {
+	      return this[i] || null;
+	    };
+	    classListProto.contains = function (token) {
+	      token += "";
+	      return checkTokenAndGetIndex(this, token) !== -1;
+	    };
+	    classListProto.add = function () {
+	      var
+	          tokens = arguments
+	        , i = 0
+	        , l = tokens.length
+	        , token
+	        , updated = false
+	      ;
+	      do {
+	        token = tokens[i] + "";
+	        if (checkTokenAndGetIndex(this, token) === -1) {
+	          this.push(token);
+	          updated = true;
+	        }
+	      }
+	      while (++i < l);
+
+	      if (updated) {
+	        this._updateClassName();
+	      }
+	    };
+	    classListProto.remove = function () {
+	      var
+	          tokens = arguments
+	        , i = 0
+	        , l = tokens.length
+	        , token
+	        , updated = false
+	        , index
+	      ;
+	      do {
+	        token = tokens[i] + "";
+	        index = checkTokenAndGetIndex(this, token);
+	        while (index !== -1) {
+	          this.splice(index, 1);
+	          updated = true;
+	          index = checkTokenAndGetIndex(this, token);
+	        }
+	      }
+	      while (++i < l);
+
+	      if (updated) {
+	        this._updateClassName();
+	      }
+	    };
+	    classListProto.toggle = function (token, force) {
+	      token += "";
+
+	      var
+	          result = this.contains(token)
+	        , method = result ?
+	          force !== true && "remove"
+	        :
+	          force !== false && "add"
+	      ;
+
+	      if (method) {
+	        this[method](token);
+	      }
+
+	      if (force === true || force === false) {
+	        return force;
+	      } else {
+	        return !result;
+	      }
+	    };
+	    classListProto.toString = function () {
+	      return this.join(" ");
+	    };
+
+	    if (objCtr.defineProperty) {
+	      var classListPropDesc = {
+	          get: classListGetter
+	        , enumerable: true
+	        , configurable: true
+	      };
+	      try {
+	        objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+	      } catch (ex) { // IE 8 doesn't support enumerable:true
+	        if (ex.number === -0x7FF5EC54) {
+	          classListPropDesc.enumerable = false;
+	          objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+	        }
+	      }
+	    } else if (objCtr[protoProp].__defineGetter__) {
+	      elemCtrProto.__defineGetter__(classListProp, classListGetter);
+	    }
+
+	    }(window.self));
+
+	    } else {
+	    // There is full or partial native classList support, so just check if we need
+	    // to normalize the add/remove and toggle APIs.
+
+	    (function () {
+	      "use strict";
+
+	      var testElement = document.createElement("_");
+
+	      testElement.classList.add("c1", "c2");
+
+	      // Polyfill for IE 10/11 and Firefox <26, where classList.add and
+	      // classList.remove exist but support only one argument at a time.
+	      if (!testElement.classList.contains("c2")) {
+	        var createMethod = function(method) {
+	          var original = DOMTokenList.prototype[method];
+
+	          DOMTokenList.prototype[method] = function(token) {
+	            var i, len = arguments.length;
+
+	            for (i = 0; i < len; i++) {
+	              token = arguments[i];
+	              original.call(this, token);
+	            }
+	          };
+	        };
+	        createMethod('add');
+	        createMethod('remove');
+	      }
+
+	      testElement.classList.toggle("c3", false);
+
+	      // Polyfill for IE 10 and Firefox <24, where classList.toggle does not
+	      // support the second argument.
+	      if (testElement.classList.contains("c3")) {
+	        var _toggle = DOMTokenList.prototype.toggle;
+
+	        DOMTokenList.prototype.toggle = function(token, force) {
+	          if (1 in arguments && !this.contains(token) === !force) {
+	            return force;
+	          } else {
+	            return _toggle.call(this, token);
+	          }
+	        };
+
+	      }
+
+	      testElement = null;
+	    }());
+	  }
+	}
+
+
+/***/ },
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var require;/* WEBPACK VAR INJECTION */(function(process, global) {/*!
@@ -3564,7 +3867,7 @@
 	function attemptVertx() {
 	  try {
 	    var r = require;
-	    var vertx = __webpack_require__(38);
+	    var vertx = __webpack_require__(41);
 	    vertxNext = vertx.runOnLoop || vertx.runOnContext;
 	    return useVertxTimer();
 	  } catch (e) {
@@ -4588,13 +4891,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), (function() { return this; }())))
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(function(win) {
@@ -4839,300 +5142,6 @@
 	else if ((typeof module)[0] == 'o') module.exports = exports;
 
 	})( typeof window !== 'undefined' ? window : this);
-
-
-/***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _classlistPolyfill = __webpack_require__(42);
-
-	var _classlistPolyfill2 = _interopRequireDefault(_classlistPolyfill);
-
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
-
-	var fadeOut_inactive = function fadeOut_inactive() {
-	  var _inactive = document.getElementsByClassName('inactive');
-	  //console.log('addClass fadeOut...');
-	  for (var i = 0; i < _inactive.length; i++) {
-	    _inactive[i].classList.add('fadeOutx99');
-	  }
-	};
-
-	exports.default = fadeOut_inactive;
-
-/***/ },
-/* 41 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var fadeIn_active = function fadeIn_active() {
-	  var _OfferUnitX99 = document.getElementsByClassName('OfferUnitX99');
-	  for (var i = 0; i < _OfferUnitX99.length; i++) {
-	    _OfferUnitX99[i].classList.remove('invisX99');
-	  }
-	  //console.log('fadingIn_active . . .');
-	};
-
-	exports.default = fadeIn_active;
-
-/***/ },
-/* 42 */
-/***/ function(module, exports) {
-
-	/*
-	 * classList.js: Cross-browser full element.classList implementation.
-	 * 2014-07-23
-	 *
-	 * By Eli Grey, http://eligrey.com
-	 * Public Domain.
-	 * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
-	 */
-
-	/*global self, document, DOMException */
-
-	/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
-
-	/* Copied from MDN:
-	 * https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-	 */
-
-	if ("document" in window.self) {
-
-	  // Full polyfill for browsers with no classList support
-	  // Including IE < Edge missing SVGElement.classList
-	  if (!("classList" in document.createElement("_"))
-	    || document.createElementNS && !("classList" in document.createElementNS("http://www.w3.org/2000/svg","g"))) {
-
-	  (function (view) {
-
-	    "use strict";
-
-	    if (!('Element' in view)) return;
-
-	    var
-	        classListProp = "classList"
-	      , protoProp = "prototype"
-	      , elemCtrProto = view.Element[protoProp]
-	      , objCtr = Object
-	      , strTrim = String[protoProp].trim || function () {
-	        return this.replace(/^\s+|\s+$/g, "");
-	      }
-	      , arrIndexOf = Array[protoProp].indexOf || function (item) {
-	        var
-	            i = 0
-	          , len = this.length
-	        ;
-	        for (; i < len; i++) {
-	          if (i in this && this[i] === item) {
-	            return i;
-	          }
-	        }
-	        return -1;
-	      }
-	      // Vendors: please allow content code to instantiate DOMExceptions
-	      , DOMEx = function (type, message) {
-	        this.name = type;
-	        this.code = DOMException[type];
-	        this.message = message;
-	      }
-	      , checkTokenAndGetIndex = function (classList, token) {
-	        if (token === "") {
-	          throw new DOMEx(
-	              "SYNTAX_ERR"
-	            , "An invalid or illegal string was specified"
-	          );
-	        }
-	        if (/\s/.test(token)) {
-	          throw new DOMEx(
-	              "INVALID_CHARACTER_ERR"
-	            , "String contains an invalid character"
-	          );
-	        }
-	        return arrIndexOf.call(classList, token);
-	      }
-	      , ClassList = function (elem) {
-	        var
-	            trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
-	          , classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
-	          , i = 0
-	          , len = classes.length
-	        ;
-	        for (; i < len; i++) {
-	          this.push(classes[i]);
-	        }
-	        this._updateClassName = function () {
-	          elem.setAttribute("class", this.toString());
-	        };
-	      }
-	      , classListProto = ClassList[protoProp] = []
-	      , classListGetter = function () {
-	        return new ClassList(this);
-	      }
-	    ;
-	    // Most DOMException implementations don't allow calling DOMException's toString()
-	    // on non-DOMExceptions. Error's toString() is sufficient here.
-	    DOMEx[protoProp] = Error[protoProp];
-	    classListProto.item = function (i) {
-	      return this[i] || null;
-	    };
-	    classListProto.contains = function (token) {
-	      token += "";
-	      return checkTokenAndGetIndex(this, token) !== -1;
-	    };
-	    classListProto.add = function () {
-	      var
-	          tokens = arguments
-	        , i = 0
-	        , l = tokens.length
-	        , token
-	        , updated = false
-	      ;
-	      do {
-	        token = tokens[i] + "";
-	        if (checkTokenAndGetIndex(this, token) === -1) {
-	          this.push(token);
-	          updated = true;
-	        }
-	      }
-	      while (++i < l);
-
-	      if (updated) {
-	        this._updateClassName();
-	      }
-	    };
-	    classListProto.remove = function () {
-	      var
-	          tokens = arguments
-	        , i = 0
-	        , l = tokens.length
-	        , token
-	        , updated = false
-	        , index
-	      ;
-	      do {
-	        token = tokens[i] + "";
-	        index = checkTokenAndGetIndex(this, token);
-	        while (index !== -1) {
-	          this.splice(index, 1);
-	          updated = true;
-	          index = checkTokenAndGetIndex(this, token);
-	        }
-	      }
-	      while (++i < l);
-
-	      if (updated) {
-	        this._updateClassName();
-	      }
-	    };
-	    classListProto.toggle = function (token, force) {
-	      token += "";
-
-	      var
-	          result = this.contains(token)
-	        , method = result ?
-	          force !== true && "remove"
-	        :
-	          force !== false && "add"
-	      ;
-
-	      if (method) {
-	        this[method](token);
-	      }
-
-	      if (force === true || force === false) {
-	        return force;
-	      } else {
-	        return !result;
-	      }
-	    };
-	    classListProto.toString = function () {
-	      return this.join(" ");
-	    };
-
-	    if (objCtr.defineProperty) {
-	      var classListPropDesc = {
-	          get: classListGetter
-	        , enumerable: true
-	        , configurable: true
-	      };
-	      try {
-	        objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
-	      } catch (ex) { // IE 8 doesn't support enumerable:true
-	        if (ex.number === -0x7FF5EC54) {
-	          classListPropDesc.enumerable = false;
-	          objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
-	        }
-	      }
-	    } else if (objCtr[protoProp].__defineGetter__) {
-	      elemCtrProto.__defineGetter__(classListProp, classListGetter);
-	    }
-
-	    }(window.self));
-
-	    } else {
-	    // There is full or partial native classList support, so just check if we need
-	    // to normalize the add/remove and toggle APIs.
-
-	    (function () {
-	      "use strict";
-
-	      var testElement = document.createElement("_");
-
-	      testElement.classList.add("c1", "c2");
-
-	      // Polyfill for IE 10/11 and Firefox <26, where classList.add and
-	      // classList.remove exist but support only one argument at a time.
-	      if (!testElement.classList.contains("c2")) {
-	        var createMethod = function(method) {
-	          var original = DOMTokenList.prototype[method];
-
-	          DOMTokenList.prototype[method] = function(token) {
-	            var i, len = arguments.length;
-
-	            for (i = 0; i < len; i++) {
-	              token = arguments[i];
-	              original.call(this, token);
-	            }
-	          };
-	        };
-	        createMethod('add');
-	        createMethod('remove');
-	      }
-
-	      testElement.classList.toggle("c3", false);
-
-	      // Polyfill for IE 10 and Firefox <24, where classList.toggle does not
-	      // support the second argument.
-	      if (testElement.classList.contains("c3")) {
-	        var _toggle = DOMTokenList.prototype.toggle;
-
-	        DOMTokenList.prototype.toggle = function(token, force) {
-	          if (1 in arguments && !this.contains(token) === !force) {
-	            return force;
-	          } else {
-	            return _toggle.call(this, token);
-	          }
-	        };
-
-	      }
-
-	      testElement = null;
-	    }());
-	  }
-	}
 
 
 /***/ }

@@ -20,9 +20,11 @@ var _fadeIn_active = require('./fadeIn_active');
 
 var _fadeIn_active2 = _interopRequireDefault(_fadeIn_active);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _fadeOut_inactive = require('./fadeOut_inactive');
 
-//import fadeOut_inactive from './fadeOut_inactive';
+var _fadeOut_inactive2 = _interopRequireDefault(_fadeOut_inactive);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function isISObject(obj) {
   return obj && obj !== 'null' && obj !== 'undefined';
@@ -101,7 +103,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
         //_showAdditionalRatingOpts();
       }
     }).then(function () {
-      //fadeOut_inactive();
+      //fadeOut_inactive(); not here
       setTimeout(function () {
         (0, _fadeIn_active2.default)();
       }, 10);

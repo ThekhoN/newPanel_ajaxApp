@@ -6,6 +6,12 @@ $snRed: #e40046;
 width: 100%;
 float: left;
 
+  //important to reset form elems
+  label, span, input {
+    margin: 0;
+    padding: 0;
+  }
+
 .dod_inner{
   max-width: 100%;
   margin: 0 auto;
@@ -22,9 +28,9 @@ float: left;
 
   .dodHeading{
     font-size: 16px;
-    padding:  1%  0 4% 0;
+    padding:  4%  0 4% 0;
     @include breakpoint(769px){
-      padding: 0 0 1% 0;
+      padding: 2% 0 1% 0;
           font-size: 18px;
     }
     span{

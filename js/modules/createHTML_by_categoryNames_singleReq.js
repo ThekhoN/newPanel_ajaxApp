@@ -30,8 +30,6 @@ function isISObject(obj) {
   return obj && obj !== 'null' && obj !== 'undefined';
 }
 
-var _w_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
 var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, dataForRender) {
 
   //console.log('dataForRender: ', dataForRender);
@@ -51,8 +49,16 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
         var unit_HTML = void 0;
         categoryName = this_innerArr[0].eventId;
         unit_HTML = this_innerArr.map(function (item) {
-          //const soldOut = item.commonMinProductDetailsDTO.soldOut;
 
+          //discountinued ~ do NOT render
+          if (isISObject(item.commonMinProductDetailsDTO) || item.pogId) {
+            if (item.commonMinProductDetailsDTO.priceInfo == null) {
+              console.log('discountinued pogId: ', item.pogId);
+              return;
+            }
+          }
+
+          //soldOut ~ do NOT render
           if (isLegit_pogId_item(item)) {
             if (item.commonMinProductDetailsDTO.soldOut === true && showSoldOut_g !== true) {
               //console.log('NOT SHOWING - soldOut items ~ pogId: ', item.pogId);
@@ -88,25 +94,16 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
     }, 100);
   } else {
     myFastdomX99.mutate(function () {
-
       finalHTML.forEach(function (e, i) {
         var wrapper_dom = document.getElementById(dom_categoryNames[i]);
         wrapper_dom.innerHTML = finalHTML[i].join('');
       });
     }).then(function () {
       //run functions that require init after ajax success here
-      //fook
       var blazy = new _blazy2.default({
         loadInvisible: true
       });
-      if (!(0, _MobPlatformCheck2.default)()) {//only on web
-        //_showAdditionalRatingOpts();
-      }
-    }).then(function () {
-      //fadeOut_inactive(); not here
-      setTimeout(function () {
-        (0, _fadeIn_active2.default)();
-      }, 10);
+      (0, _fadeIn_active2.default)();
     }).catch(function (err) {
       console.log('error in fastdom setHTML: ', err);
     });
@@ -165,6 +162,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
 
   //BannerX99
   function _setHTML_BannerX99(item) {
+    //addClass ~ invisX99
     return '<li class="invisX99 OfferUnitX99 BannerX99_unit responsiveFontSizeX99 pad06_vertical ">' + _setHTML_offerUnit_href(item) + _setHTML_offerStripUnit_offerImageOnly(item) + _setHTML_offerUnit_href_closing() + '</li>';
   }
 
@@ -173,7 +171,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
     if (query_sdPlus_priceSlab(item)) {
       return '';
     }
-    return '<li class="invisX99 OfferUnitX99 OffersContentBoxLi ' + _setClassName_categoryName(item) + '" ' + _setID_pogId(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + _setHTML_wrap_saveAmt(item) + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing() + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
+    return '<li class="invisX99 OfferUnitX99 OffersContentBoxLi ' + _setClassName_categoryName(item) + '" ' + _setID_pogId(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing() + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
   }
 
   //dodSuperDeals
@@ -182,7 +180,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
       return;
     }
     //console.log('setHTML_superDod running!');
-    return '<li class="invisX99 OfferUnitX99 dodSuperDeal_unit offerUnits_2_2 dodSuperDealUnit_ev' + _setClassName_categoryName(item) + '"' + _setID_pogId(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + setHTML_wrapCenterCont() + setHTML_centeredContX() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + _setHTML_wrap_saveAmt(item) + setHTML_centeredContX_closing() + setHTML_wrapCenterCont_closing() + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing(item) + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
+    return '<li class="invisX99 OfferUnitX99 dodSuperDeal_unit offerUnits_2_2 dodSuperDealUnit_ev' + _setClassName_categoryName(item) + '"' + _setID_pogId(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + setHTML_wrapCenterCont() + setHTML_centeredContX() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + setHTML_centeredContX_closing() + setHTML_wrapCenterCont_closing() + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing(item) + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
   }
 
   //setHTML frags

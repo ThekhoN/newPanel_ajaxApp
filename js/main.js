@@ -66,7 +66,7 @@ class AjaxPageApp {
     }
     else {
         preLoader_animation();
-        fadeOut_inactive();
+        //fadeOut_inactive();
         window.myFastdomX99 = fastdom.extend(fastdomPromised);
         console.log('running axios. . .');
         axios.get(this.url)

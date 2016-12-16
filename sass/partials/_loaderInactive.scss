@@ -11,7 +11,7 @@
   text-align: center;
   font-size: 16px;
   color: transparent!important;
-  @include transition(all 5s linear);
+  //@include transition(all 5s linear);
   opacity: 0.5;
 
   &:hover {
@@ -134,9 +134,7 @@ li.inactive.preData_loading {
 }
 
 
-
-
 @include keyframes(translateX_loop) {
-    0% {opacity: 0.1; @include transform(translate3d(0, 0, 0) )}
-    100% {opacity: 0.3; @include transform(translate3d(480px, 0, 0) )}
+    0% {@include transform(translate3d(0, 0, 0) )}
+    100% {@include transform(translate3d(400px, 0, 0) )}
 }

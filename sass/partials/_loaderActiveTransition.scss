@@ -4,4 +4,5 @@
 }
 .OfferUnitX99 {
   @include transition(opacity 0.4s linear);
+  @include transform(translate3d(0,0,0));
 }

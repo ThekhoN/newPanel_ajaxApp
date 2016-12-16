@@ -10,9 +10,6 @@ function isISObject(obj){
   return obj && obj !== 'null' && obj !== 'undefined';
 }
 
-var _w_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-
 const createHTML_by_categoryNames = (O_O, dataForRender) => {
 
   //console.log('dataForRender: ', dataForRender);
@@ -29,8 +26,16 @@ const createHTML_by_categoryNames = (O_O, dataForRender) => {
       let unit_HTML;
       categoryName = this_innerArr[0].eventId;
       unit_HTML = this_innerArr.map((item) => {
-        //const soldOut = item.commonMinProductDetailsDTO.soldOut;
 
+        //discountinued ~ do NOT render
+        if(isISObject(item.commonMinProductDetailsDTO) || item.pogId){
+          if(item.commonMinProductDetailsDTO.priceInfo == null){
+              console.log('discountinued pogId: ', item.pogId);
+              return;
+          }
+        }
+
+        //soldOut ~ do NOT render
         if(isLegit_pogId_item(item)){
           if(item.commonMinProductDetailsDTO.soldOut === true && showSoldOut_g !== true){
             //console.log('NOT SHOWING - soldOut items ~ pogId: ', item.pogId);
@@ -66,7 +71,6 @@ const createHTML_by_categoryNames = (O_O, dataForRender) => {
   }
   else {
       myFastdomX99.mutate(function() {
-
           finalHTML.forEach((e, i) => {
               let wrapper_dom = document.getElementById(dom_categoryNames[i]);
               wrapper_dom.innerHTML = finalHTML[i].join('');
@@ -74,19 +78,10 @@ const createHTML_by_categoryNames = (O_O, dataForRender) => {
         })
         .then(function () {
           //run functions that require init after ajax success here
-          //fook
           var blazy = new Blazy({
               loadInvisible: true
             });
-            if(!MobPlatformCheck()){//only on web
-                //_showAdditionalRatingOpts();
-            }
-        })
-        .then(function () {
-            //fadeOut_inactive(); not here
-            setTimeout(function () {
-                fadeIn_active();
-            }, 10);
+          fadeIn_active();
         })
         .catch(function (err) {
             console.log('error in fastdom setHTML: ', err);
@@ -152,6 +147,7 @@ const createHTML_by_categoryNames = (O_O, dataForRender) => {
 
   //BannerX99
   function _setHTML_BannerX99(item) {
+    //addClass ~ invisX99
     return ('<li class="invisX99 OfferUnitX99 BannerX99_unit responsiveFontSizeX99 pad06_vertical ">' +
             _setHTML_offerUnit_href(item) +
             _setHTML_offerStripUnit_offerImageOnly(item) +
@@ -175,7 +171,6 @@ const createHTML_by_categoryNames = (O_O, dataForRender) => {
                     _setHTML_offerUnit_title(item) +
                     _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) +
                     _setHTML_offerUnit_ratingWrap(item) +
-                    _setHTML_wrap_saveAmt(item) +
                   _setHTML_offerUnit_nonImgContWrap_closing() +
 
           _setHTML_offerUnit_href_afterWrap_closing() +
@@ -202,7 +197,7 @@ const createHTML_by_categoryNames = (O_O, dataForRender) => {
                     _setHTML_offerUnit_title(item) +
                     _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) +
                     _setHTML_offerUnit_ratingWrap(item) +
-                    _setHTML_wrap_saveAmt(item) +
+
                 setHTML_centeredContX_closing() +
               setHTML_wrapCenterCont_closing() +
             _setHTML_offerUnit_nonImgContWrap_closing() +

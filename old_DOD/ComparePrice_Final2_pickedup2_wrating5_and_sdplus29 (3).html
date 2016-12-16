@@ -1,0 +1,1439 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test</title>
+<script>
+var pictureTag_supported = !!window.HTMLPictureElement;
+checkPicturefill_req();
+
+function checkPicturefill_req() {
+    if (!pictureTag_supported) {
+        ['https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.1/picturefill.min.js'].forEach(function(src) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            document.head.appendChild(script);
+        });
+    } else {
+        console.log('picture tag supported, picturefill not required!'); 
+    }
+}
+</script>
+
+
+<link rel="stylesheet" href="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/001cr/mg/bimg/remixofall2.css" type="text/css">
+
+<style>
+.innerSection{ margin:0 auto !important; padding:0;}
+.faquickview{ display:none !important}
+.sectionX{ margin-bottom:0}
+.for_RangeOnly .OffersTitle {height:auto !important;}
+.for_RangeOnly .rating_Wrap, .for_RangeOnly .wrap_saveAmt { display:none;}
+.for_RangeOnly .OffersContentIMG img {width:100%; height:auto;}
+.for_RangeOnly .OffersContentIMG, .imgBG01 .OffersContentIMG    { padding-top:0px!important;}
+.imgBG01 .OffersContTxt { display:none;}
+.bankOfferStripBox { max-width:100%; margin:0 auto; text-align:center; background:#fff; border-radius:4px; position: relative;}
+.firstbanner { margin:0.5% auto;}
+.truncateX { line-height:20px;}
+.OffersContentIMG img { width:230px; height:258px;}
+.inactive .OffersContentIMG img.lazy-load, .OffersContentIMG img.lazy-load { width:230px; height:258px;}
+.for_RangeOnly .inactive .OffersContentIMG img.lazy-load, .for_RangeOnly .OffersContentIMG img.lazy-load {width:100%; height:auto;}
+.imgBG01 .inactive .OffersContentIMG img.lazy-load, .imgBG01 .OffersContentIMG img.lazy-load {width:100%; height:auto;}
+.imgBG01 .OffersContentIMG img { width:100%; height:auto;}
+.bankOfferStripBox_WAP{ display:none;}
+.bankOfferStripBox{ display:block;}
+
+@media(max-width:768px) {
+.offerLongBannerX .OffersContentIMG img.lazy-load {    width: 100%!important;    height: 100%!important;}
+.OffersContentIMG img {width:130px; height:152px;}
+.inactive .OffersContentIMG img.lazy-load, .OffersContentIMG img.lazy-load {width:130px; height:152px;}
+.for_RangeOnly .inactive .OffersContentIMG img.lazy-load, .for_RangeOnly .OffersContentIMG img.lazy-load {width:100%; height:auto;}
+.firstbanner { border-bottom:solid 1px #ccc;}
+.firstbanner:last-child {border:none;}
+.bankOfferStripBox { margin:0 auto; display:none;}
+.bankOfferStripBox_WAP{ display:block}
+.inactive .viewAllOnlyX{display: none !Important;}
+}
+</style>
+
+<!--Double Offers Bank Stripe Box -->
+<style>
+.sectionX.doubleStripeBx { margin:0; }
+.doubleStripeBx .OffersContTxt { display:none; }
+.doubleStripeBx .resp_LiX ul { padding: 10px 0; }
+.doubleStripeBx .resp_LiX ul li { width:49% !important; margin:0 !important; padding:0; }
+.doubleStripeBx .resp_LiX ul li { border-right:1px solid #ccc !important; }
+.doubleStripeBx .resp_LiX ul li:last-child { border-right:1px solid #fff !important; }
+/* Single Offers Bank Stripe Box */
+.doubleStripeBx.singleofferstrp .resp_LiX ul li { width:99% !important; margin:0 !important; padding:0; border:0; }
+.doubleStripeBx .resp_LiX ul li:hover { box-shadow:none !important;}
+.doubleStripeBx .width_ContstraX { max-width:100%; }
+.doubleStripeBx .inactive .OffersContentIMG img.lazy-load, .doubleStripeBx .OffersContentIMG img.lazy-load { width:auto; max-width:100%; height:auto; }
+.doubleStripeBx .OffersContentIMG img { width:auto; max-width:100%; display:block; margin:0 auto; height:auto; }
+.doubleStripeBx .OffersContentIMG { padding:0 !important; }
+/*.rating_Wrap .numberRevsX:nth-child(2) {display: block !important;} */
+.doubleStripeBx .width_ContstraX { padding:0; margin:0; }
+
+.faload_wrap{    width: 100%;    text-align: center;    margin: 0 auto;    padding: 2em 0;    position: relative;  box-sizing: border-box;    position: absolute;    z-index: 99;    height: 30px;    width: 100%;    background:#fff;display: block;    display: block;    overflow: hidden;    top:39%}.faload{width:32px!important;height:32px; margin-top:-22px    }
+	.headerBannerX { width:100% !important}
+.headerBannerX img{ width:100% !important;}
+@media(max-width:768px) {
+.doubleStripeBx .resp_LiX ul { padding: 0; }
+.doubleStripeBx .resp_LiX ul li { width:99% !important; border-bottom:1px solid #ccc !important; border-right:0 !important;  }
+.doubleStripeBx .resp_LiX ul li:hover { border-bottom:1px solid #ccc !important; }
+.doubleStripeBx .resp_LiX ul li:last-child { border:0 !important; border-bottom:1px solid #fff !important; }
+
+.whitebg{position:relative}
+
+</style>
+
+
+<style>
+.headerBannerX { width:100% !important}
+.headerBannerX img{ width:100% !important;}
+.innerSection{ margin:0 auto !important; padding:0;}
+.faquickview{ display:none !important}
+.sectionX{ margin-bottom:0}
+.bankOfferStripBox{ margin:0 auto !important;}
+.truncateX { line-height:20px;}
+.OffersContentIMG img { width:230px; height:258px;}
+.inactive .OffersContentIMG img.lazy-load, .OffersContentIMG img.lazy-load { width:230px; height:258px;}
+.rangOff .inactive .OffersContentIMG img.lazy-load, .rangOff .OffersContentIMG img.lazy-load { width:100%; height:auto;}
+.rangOff .OffersContentIMG img { width:100%; height:auto;}
+.rangOff .wrap_saveAmt { display:none;}
+@media(max-width:768px) {
+.offerLongBannerX .OffersContentIMG img.lazy-load {width: 100%!important;    height: 100%!important;}
+.OffersContentIMG img {width:130px; height:152px;}
+.inactive .OffersContentIMG img.lazy-load, .OffersContentIMG img.lazy-load {width:130px; height:152px;}
+.firstbanner { border-bottom:solid 1px #ccc;}
+.firstbanner:last-child {border:none;}
+}
+
+.offerStripOrange {
+    margin: 1% 0 !important;}
+
+.sectionX.doubleStripeBx { margin:0; }
+.doubleStripeBx .OffersContTxt { display:none; }
+.doubleStripeBx .resp_LiX ul { padding: 0px 0; }
+.doubleStripeBx .resp_LiX ul li { width:49% !important; margin:0 !important; padding:0; }
+.doubleStripeBx .resp_LiX ul li { border-right:1px solid #ccc !important; }
+.doubleStripeBx .resp_LiX ul li:last-child { border-right:1px solid #fff !important; }
+/* Single Offers Bank Stripe Box */
+.doubleStripeBx.singleofferstrp .resp_LiX ul li { width:99% !important; margin:0 !important; padding:0; border:0; }
+.doubleStripeBx .resp_LiX ul li:hover { box-shadow:none !important;}
+.doubleStripeBx .width_ContstraX { max-width:100%; }
+.doubleStripeBx .inactive .OffersContentIMG img.lazy-load, .doubleStripeBx .OffersContentIMG img.lazy-load { width:auto; max-width:100%; height:auto; }
+.doubleStripeBx .OffersContentIMG img { width:auto; max-width:100%; display:block; margin:0 auto; height:auto; }
+.doubleStripeBx .OffersContentIMG { padding:0 !important; }
+/*.rating_Wrap .numberRevsX:nth-child(2) {display: block !important;} */
+.doubleStripeBx .width_ContstraX { padding:0; margin:0; }
+@media(max-width:768px) {
+.doubleStripeBx .resp_LiX ul { padding: 0; }
+.doubleStripeBx .resp_LiX ul li { width:99% !important; border-bottom:1px solid #ccc !important; border-right:0 !important;  }
+.doubleStripeBx .resp_LiX ul li:hover { border-bottom:1px solid #ccc !important; }
+.doubleStripeBx .resp_LiX ul li:last-child { border:0 !important; border-bottom:1px solid #fff !important; }
+}
+
+/********** Range Offers ***/
+.Rangeoffers .rating_Wrap{ display:none !important}
+.captionX99 { /*   background-image: linear-gradient(274deg, #dd5e89, #f7bb97);*/ background-color:#d6edfb;   padding:1.6em 0;}
+.gradient_greenToBlue {   /* background-image: linear-gradient(97deg, #64ecba, #008de7)!important;   */ background-color: #d6edfb !important;    }
+.captionX99 h2{  text-align:center;}
+.heroWrapper99X{position:relative;overflow:visible !important;box-sizing:border-box; padding-bottom:0.5%}.heroWrapper99X li.OffersContentBoxLi{width:49%;float:left;margin-right:2%}.heroWrapper99X li.OffersContentBoxLi:nth-child(2n){margin-right:0}@media (min-width: 768px){.heroWrapper99X li.OffersContentBoxLi{padding:1.6em 0}}.heroWrapper99X .OffersContentIMG{padding:0;padding-top:3px}@media (min-width: 768px){.heroWrapper99X .OffersContentIMG{width:36%;padding:5% 0; float:right;}}@media (min-width: 1024px){.heroWrapper99X .OffersContentIMG{padding:0}}.heroWrapper99X .OffersContentIMG img{max-width:100%;}@media (min-width: 768px){.heroWrapper99X .OffersContTxt{width:60%;top:0;left:3%;position:absolute;height:100%}}.singleHeroWrap{padding:2% 0}.singleHeroWrap li.OffersContentBoxLi{float:none;margin:0 auto;border:0;padding-left:0;padding-right:0;width:100%;position:static}@media (min-width: 768px){.singleHeroWrap li.OffersContentBoxLi{width:66%;padding:1.6em 0;position:relative}}.singleHeroWrap .OfferDiscount_Discount{display:inline-block;margin:0 auto;float:none}@media (min-width: 768px){.singleHeroWrap .OfferDiscount_Discount{width:auto;float:left}}.singleHeroWrap .OffersContTxt{text-align:center}@media (min-width: 768px){.singleHeroWrap .OffersContTxt{text-align:left}}.singleHeroWrap .cashBackX_wrap{margin:0 auto;float:none}@media (min-width: 768px){.singleHeroWrap .cashBackX_wrap{float:left}}.singleHeroWrap .OfferHighlights{float:none;margin:0.1em auto}@media (min-width: 768px){.singleHeroWrap .OfferHighlights{float:left}}
+.heroWrapper99X .OfferGoldx {    top: 73%;    left: -10px;}
+.heroWrapper99X .resp_LiX li{width: 48% !important;  margin: 0 1%;    padding: 2% 4%;}
+.heroWrapper99X .resp_LiX ul {    padding-bottom: 1.3%;}
+@media (max-width: 768px){
+/*	.heroWrapper99X .OffersContentIMG img{ height:auto !important}*/
+	.heroWrapper99X .resp_LiX li{width: 50% !important; padding:0; margin:0;}
+	.heroWrapper99X .OfferGoldx { top:-20%}
+	.heroWrapper99X .resp_LiX ul{ padding-bottom:0}
+}
+
+
+ 
+#footer-top-text{ width: auto !important; padding: 0 4% 1% 4% !important; max-width: 1600px !important;}
+</style>
+<style>
+.subsribe_btn{ padding:4em 0;  clear:both;    font-family: "font-regular"; text-align:center; transition:all 0.5s linear;}
+.subsribe_text{ font-size:22px; line-height:22px; color:#75787b; padding-bottom:10px; }
+.subsribecat_text{font-size:16px; line-height:22px; color:#75787b; padding-bottom:0px; }
+.subthankyou_text{font-size:18px; line-height:22px; color:#e40046; padding-bottom:5px; display:none;}
+.dealform_filed{ padding:10px 0 0px 0;}
+.dealform_filed:last-child{padding:20px 0 0px 0;}
+.dealform_filed input[type=email]{ font-size:14px; color:#434343; height:40px; width:250px; border:solid 1px #c8c8c8; border-radius:3px; box-sizing:border-box; padding:5px;}
+.dealform_filed input[type=submit]{ background:#ee2653; height:40px; width:130px; color:#FFFFFF; font-weight:bold; font-size:15px;  border:none; border-radius:3px; box-sizing:border-box; padding:5px;}
+.dealform_filed ul{ margin:0px; padding:0px; list-style:none; text-align:center;}
+.dealform_filed ul li{ display:inline-block; margin-right:10px; font-size:15px; color:#8E8D8D;}
+.dealform_filed ul li:last-child{margin-right:0px;}
+.dealform_filed ul li input:checked{color:#75787b;}
+.divforapp{ height:300px; display:none;}
+@media (max-width: 900px){
+	.dealform_filed ul li{ margin-bottom:10px;}
+}
+
+@media (max-width: 480px){
+.dealform_filed{ margin:auto; width:300px;}
+.dealform_filed ul li{ width:45%; text-align:left; padding-bottom:0px; display:flex; float:left; font-size: 13px; margin-bottom: 0px;}
+.dealform_filed input[type="email"]{width: 195px; height:35px;}	
+.dealform_filed input[type="submit"]{width: 100px; height:35px;}
+label{font-size: 12px !important; padding: 3px 0 10px !important;}
+.subthankyou_text{ font-size:14px;}
+
+}
+
+
+	
+</style>
+<!--<link href="https://i4.sdlcdn.com/css/17nov1479906988897/snap/common/scss/base.min.css" rel="stylesheet" type="text/css">-->
+
+<style>
+	
+	
+.toolTip-box-outer{margin-top:10px;margin-left:-19px;background:#fff;position:absolute;color:#565656;font-size:13px;line-height:12pt;padding:0;box-shadow:0 0 3px 2px rgba(0,0,0,0.1);-moz-box-shadow:0 0 3px 2px rgba(0,0,0,0.1);-webkit-box-shadow:0 0 3px 2px rgba(0,0,0,0.1);z-index:53;border:1px solid #ccc;border-radius:5px;max-width:400px;min-width:400px;top: calc(100% + -64px);display: none}.toolTip-box-outer #ratings-wrapper{display:inline-block;cursor:pointer;width:100%}.toolTip-box-outer .productWriteaReview{background:#fafafa;padding:10px;text-align:center;border-bottom-left-radius:10px;border-bottom-right-radius:10px}.toolTip-box-outer .product_infogram{padding:27px 0 22px;color:#000}.toolTip-box-outer .product_infogram .rating-info{text-align:center;margin:25px 0 10px}.toolTip-box-outer .product_infogram .rating-info .ratetxt span{font-size:45px;color:#767676}.toolTip-box-outer .product_infogram .rating-info .ratetxt .LTgray{line-height:10px;font-size:15px;display:block;padding-top:10px}.toolTip-box-outer .product_infogram .rating-info .ratetxt .av-rating{padding-top:10px;display:block;margin:0 auto;width:46%}.toolTip-box-outer .product_infogram .rating-histogram{padding-left:30px;margin-left:-2px;min-width:170px !important; text-align: left; }.toolTip-box-outer .product_infogram .rating-histogram .rating-histogram-header{margin-bottom:10px}.toolTip-box-outer .product_infogram .rating-histogram .row{width:100%;margin:0}.toolTip-box-outer .product_infogram .rating-histogram .row span{font-size:10px;color:#9e9e9e}.toolTip-box-outer .product_infogram .rating-histogram .row span.review-bar{background-color:#eda200;text-decoration:none}.toolTip-box-outer .product_infogram .rating-histogram .row span:hover{text-decoration:none}.toolTip-box-outer .product_infogram .rating-histogram .row span.barover{background:#f6b800;height:9px;margin:0 3px 0 8px;width:0px;display:inline-block; transform: scaleX(0.1);transition:  all 4.4s ease;}
+	
+	.rating-histogram{width: 70%;float: left;    box-sizing: border-box;}
+	.rating-info{width: 30% !important;float: left;    box-sizing: border-box;}
+	.toolTip-box-outer .product_infogram .rating-info .ratetxt .av-rating {width:  79%;}
+	.toolTip-box-outer .product_infogram {		padding: 7px 0 7px;}
+	.xola{transition: all 1.0s ease !important; transition-delay: 1s !important; transform: scaleX(1) !important}
+	.OfferDiscount_Discount{z-index: 10}	
+	.heroWrapper99X .width_ContstraX ul{overflow: visible !important}
+	.heroWrapper99X .toolTip-box-outer{top: calc(80% + -54px);}
+	.captionX99 h2 {position: static}
+	.productWriteaReview{display: none}
+	.toolTip-box-outer{    min-width: 305px;}
+	.toolTip-box-outer .product_infogram .rating-histogram {    padding-left: 5px;    margin-left: -2px;		min-width: 200px;}
+	.OfferHighlights{    -webkit-transition: all .1s ease-in;    -moz-transition: all .1s ease-in;    transition: all .3s ease-in; transform: translateY(-2px)}
+	@media (min-width:769px){
+	.OfferHighlights:hover{       transition: all .3s ease-in !important; transform: translateY(-2px) scale(1.1);}
+	}
+	@media (max-width:768px){		
+		.OfferHighlights:hover{       transition: all .3s ease-in !important; transform: translateY(0px) scale(1);}
+	}
+	</style>
+</head>
+<body onload="ucxoxo()">
+  <!--fbShare crawlerImage 200px 200px define ALT for the image/-->
+<img src="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/google_sultan/VD_FB_icon_Diwali_1Oct.jpg" style="display:none;" alt="Diwali Sale">
+<!--/fbShare crawlerImage-->
+
+<div id="mainWrapperX_testX999" class="inHouseDevs_pageWrapper"> 
+
+
+
+<div id="back-top" class="">
+<a href="#top" class="hashAdded">
+<i class="back-to-top-icon backTopImg"></i>
+</a>
+</div>
+
+<div id="mainbg">
+
+<div class="headerBannerX">
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/Ankita/12thsept_header_DOD_web.jpg" media="(min-width: 768px)">
+              <source srcset="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/Ankita/12thsept_header_DOD_app.jpg" media="(min-width: 320px)">
+              <source srcset="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/Ankita/12thsept_header_DOD_app.jpg">
+              <!--[if IE 9]></video><![endif]-->
+              <img srcset="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/Ankita/12thsept_header_DOD_web.jpg 768w,
+              https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/Ankita/12thsept_header_DOD_app.jpg 360w,
+              https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/Ankita/12thsept_header_DOD_app.jpg 320w" sizes="100%" alt="Deals of the Day Snapdeal 2016">
+              </picture>
+  		</div>
+        
+      
+<div class="clearfix"></div>
+
+
+
+<div class="Btc_container">
+
+
+<div class="sectionX doubleStripeBx singleofferstrp offerStripOrange">
+                            <div class="offerCont_wrap">
+                            <div class="width_ContstraX relFontX resp_LiX dummyHeight_bg innerSection">
+                            <ul id="bankstripe_List" class=""> <!-- inactive -->
+                            
+                            <li class="OffersContentBoxLi ">
+                                <div class="Soldout">
+                                    <div class="soldOut_btn">Sold Out</div>
+                                </div>
+                                
+                                <div class="toolTip-box-outer sdTooltipWrapper col-lg-15 col-md-19 col-xs-15 infodata" id="ratings-details-box-outer">
+                                                    
+								</div>
+							
+                               
+                                <div class="OffersContentBox">
+                                    <a class="OffersContentBoxLink" target="_blank" href="">
+                                        <div class="OffersContentIMG "><div class="comp-animated-icon1 "><span class="animated-icon1" data-pog="">
+                                                     <i class="sd-icon sd-icon-like1-outline1 heart-icon animated-font-pre"></i></span></div> <img data-src="" class="lazy-load" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div>
+                                        <div class="OffersContTxt">
+                                            <div class="wrapCenterCont">
+                                                <div class="centeredContX">
+<div class="OfferGoldx"><span class="OfferGold"></span><span class="faquickview">Quick View <i class="sd-icon sd-icon-quick-view "></i></span></div>
+                                                   
+                                                    <div class="OffersTitle "> </div>
+                                                    <div class="rating_Wrap">
+                                                        <div class="OfferHighlights">
+                                                            <div class="ratingBG_disabled"></div>
+                                                            <div class="ratingBG_active"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="priceTagline_relWrap">
+                                                        <div class="DoubleOfferTxtWrpr">
+    
+                                                            <div class="OffeRLft">
+                                                                <div class="StdFonTBLK tagLine1"> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="priceContX"> <span class="OfferMRP_Price"></span> <span class="OfferPrice_Price"></span><span class="OfferDiscount"><span class="OfferDiscount_Discount"></span></span> </div>
+                                                    </div>
+                                                    
+                                                    <div class="cashBackX_priceEffect_heightWrap">
+                                                        <div class="cashBackX_RelWrap">
+                                                            <div class="cashBackX_wrap"> </div>
+                                                        </div>
+                                                        
+                                                        <div class="PriceEffect_wrap"> </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="wrap_saveAmt"></div>
+                                                    <div class="cta_Wrap"> <span class="cta_Text">
+                                                                        Shop Now
+                                                                    </span> </div>
+                                                </div>
+                                            </div>
+                                            <!--//end of wrapCenterCont-->
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                                
+                                          
+                                          
+                            </ul>
+                            </div>
+                            </div>
+                            
+                            
+                            </div>
+ 
+
+
+    <div class="clearfix"></div>
+         
+    <div class="sectionOfferWrapper DODCaption  hideOpacityBGx"> <!-- add hideOpacityBG -->
+       <div class="whitebg">
+       <!--<div class="faload_wrap"><img class="faload" src="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/001cr/ring-alt.gif"></div>-->
+             
+             
+                   <!--  Blockbuster Deals -->
+              <div class="sectionX">  
+              
+              <div class="captionX99 caption_1 topCatIcon">
+                    <div class="centerCaptionInnr">
+                        <h2>
+
+
+                            <span class="decorX"> Super Deals of the Day </span>
+                            
+                        </h2>
+                    </div>
+                  </div> 
+                              
+               <!-- Laptops5 -->
+                <div class="offerCont_wrap heroWrapper99X ">
+                    <div class="width_ContstraX relFontX resp_LiX   dummyHeight_bg innerSection">
+                        <ul id="superDodDouble_01_List" class="inactive"> <!-- inactive -->
+                        <li class="OffersContentBoxLi ">
+                                <div class="Soldout">
+                                    <div class="soldOut_btn">Sold Out</div>
+                                </div>
+                                <div class="OffersContentBox">
+                                    <a class="OffersContentBoxLink" target="_blank" href="">
+                                        <div class="OffersContentIMG "><div class="comp-animated-icon1 "><span class="animated-icon1" data-pog="">
+                                                     <i class="sd-icon sd-icon-like1-outline1 heart-icon animated-font-pre"></i></span></div> <img data-src="" class="lazy-load" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div>
+                                        <div class="OffersContTxt">
+                                            <div class="wrapCenterCont">
+                                                <div class="centeredContX">
+<div class="OfferGoldx"><span class="OfferGold"></span><span class="faquickview">Quick View <i class="sd-icon sd-icon-quick-view "></i></span></div>
+                                                   
+                                                    <div class="OffersTitle "> </div>
+                                                    <div class="rating_Wrap">
+                                                        <div class="OfferHighlights">
+                                                            <div class="ratingBG_disabled"></div>
+                                                            <div class="ratingBG_active"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="priceTagline_relWrap">
+                                                        <div class="DoubleOfferTxtWrpr">
+    
+                                                            <div class="OffeRLft">
+                                                                <div class="StdFonTBLK tagLine1"> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="priceContX"> <span class="OfferMRP_Price"></span> <span class="OfferPrice_Price"></span><span class="OfferDiscount"><span class="OfferDiscount_Discount"></span></span> </div>
+                                                    </div>
+                                                    
+                                                    <div class="cashBackX_priceEffect_heightWrap">
+                                                        <div class="cashBackX_RelWrap">
+                                                            <div class="cashBackX_wrap"> </div>
+                                                        </div>
+                                                        
+                                                        <div class="PriceEffect_wrap"> </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="wrap_saveAmt"></div>
+                                                    <div class="cta_Wrap"> <span class="cta_Text">
+                                                                        Shop Now
+                                                                    </span> </div>
+                                                </div>
+                                            </div>
+                                            <!--//end of wrapCenterCont-->
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                   
+                        
+                        
+                        
+                        </ul>
+                    </div>
+                </div>                
+              </div>
+              
+              
+              <!-- Normal Deals -->
+              <div class="sectionX">  
+              <div class="captionX99 caption_1 topCatIcon">
+                    <div class="centerCaptionInnr">
+                        <h2>
+                            <span class="decorX">Deals of the Day</span>
+                            
+                         </h2>
+                    </div>
+                  </div>            
+               <!-- Laptops5 -->
+                <div class="offerCont_wrap">
+                    <div class="width_ContstraX relFontX resp_LiX dummyHeight_bg innerSection">
+                        <ul id="DealofDayOffers_List" class="inactive"> <!-- inactive -->
+                        <li class="OffersContentBoxLi ">
+                                <div class="Soldout">
+                                    <div class="soldOut_btn">Sold Out</div>
+                                </div>
+                                <div class="toolTip-box-outer sdTooltipWrapper col-lg-15 col-md-19 col-xs-15 infodata" id="ratings-details-box-outer">
+                                                    
+								</div>
+                                <div class="OffersContentBox">
+                                    <a class="OffersContentBoxLink" target="_blank" href="">
+                                        <div class="OffersContentIMG "><div class="comp-animated-icon1 "><span class="animated-icon1" data-pog="">
+                                                     <i class="sd-icon sd-icon-like1-outline1 heart-icon animated-font-pre"></i></span></div> <img data-src="" class="lazy-load" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div>
+                                        <div class="OffersContTxt">
+                                            <div class="wrapCenterCont">
+                                                <div class="centeredContX">
+<div class="OfferGoldx"><span class="OfferGold"></span><span class="faquickview">Quick View <i class="sd-icon sd-icon-quick-view "></i></span></div>
+                                                   
+                                                    <div class="OffersTitle "> </div>
+                                                    <div class="rating_Wrap">
+                                                        <div class="OfferHighlights">
+                                                            <div class="ratingBG_disabled"></div>
+                                                            <div class="ratingBG_active"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="priceTagline_relWrap">
+                                                        <div class="DoubleOfferTxtWrpr">
+    
+                                                            <div class="OffeRLft">
+                                                                <div class="StdFonTBLK tagLine1"> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="priceContX"> <span class="OfferMRP_Price"></span> <span class="OfferPrice_Price"></span><span class="OfferDiscount"><span class="OfferDiscount_Discount"></span></span> </div>
+                                                    </div>
+                                                    
+                                                    <div class="cashBackX_priceEffect_heightWrap">
+                                                        <div class="cashBackX_RelWrap">
+                                                            <div class="cashBackX_wrap"> </div>
+                                                        </div>
+                                                        
+                                                        <div class="PriceEffect_wrap"> </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="wrap_saveAmt"></div>
+                                                    <div class="cta_Wrap"> <span class="cta_Text">
+                                                                        Shop Now
+                                                                    </span> </div>
+                                                </div>
+                                            </div>
+                                            <!--//end of wrapCenterCont-->
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>                
+              </div>
+
+              
+           
+ <div class="clearfix"></div>
+
+            
+	    </div>
+                
+                
+            </div>
+            
+            
+                        
+                   <!--shareX99_wrapper-->
+    <div class="sectionX overFlowVisX99 noMarginX99 ">
+      <div class="innerCard_sectionXWrap overFlowVisX99">
+        <div class="shareX99_wrapper">
+          <div class="shareX99">
+              
+
+            <div class="shareThisPageOn_Wrap">
+                    <div class="airplaneWrap_diwaliF airPlaneBG_diwaliF"></div>
+                    <div class="shareThisPageOnTxt">
+                      Share <span class="conditionalShow_small">this page</span> on:
+                    </div>
+                    <div class="shareIconX_icoWrapper" >
+                        <ul>
+                            <li class="facebookX unit_socialX99"> <i class="sprite_diwaliF sprite_diwaliF_facebook"></i></li>
+                            <li class="twitterX unit_socialX99" data-hashtag="SnapdealDealsOfTheDay2016"> <i class="sprite_diwaliF sprite_diwaliF_twitter"></i></li>
+                            <li class="googleplusX unit_socialX99"> <i class="sprite_diwaliF sprite_diwaliF_google"></i></li>
+                            <li class="pinterestX unit_socialX99"> <i class="sprite_diwaliF sprite_diwaliF_pinterest"></i> </li>
+                            <!-- <li class="sprite_diwaliF whatsappX "> <i class="sprite_diwaliF sprite_diwaliF_facebook"></i></li> -->
+                        </ul>
+                    </div>
+
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </div>
+    <!--/shareX99_wrapper-->
+    
+    
+    
+         <!--SUBSCRIBE-->
+          <div class="subsribe_btn">
+          <div class="subsribe_text">Want to get daily alerts for deals of the day?</div>
+          <div class="subsribe_text" style="font-size:16px; line-height:22px; color:#75787b; padding-bottom:0px;">Choose Category (if any preference)</div>
+          <div class="subthankyou_text">Thank you for the subscription. We will keep you posted.</div>
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLSdLUEP2R89tJJ4D2SYb7zAB-7TpAH9xUDcbo1Noj0CoHnzKbA/formResponse" method="POST" id="ss-form" target="hidden_iframe" class="infocusform" onsubmit="yoloKR();">
+          <div class="dealform_filed">
+          <ul class="ss-choices ss-choices-required" role="group" aria-label="  "><li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input name="entry.622013395" value="Home &amp; Daily Needs" id="group_622013395_1" role="checkbox" class="ss-q-checkbox valid " aria-required="true" type="checkbox" ></span>
+<span class="ss-choice-label">Home &amp; Daily Needs</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input name="entry.622013395" value="Electronics &amp; Mobiles" id="group_622013395_2" role="checkbox" class="ss-q-checkbox valid" aria-required="true" type="checkbox" ></span>
+<span class="ss-choice-label">Electronics &amp; Mobiles</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input name="entry.622013395" value="Womens Fashion" id="group_622013395_3" role="checkbox" class="ss-q-checkbox valid" aria-required="true" type="checkbox" ></span>
+<span class="ss-choice-label">Womens Fashion</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input name="entry.622013395" value="Mens Fashion" id="group_622013395_4" role="checkbox" class="ss-q-checkbox valid" aria-required="true" type="checkbox" ></span>
+<span class="ss-choice-label">Mens Fashion</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input name="entry.622013395" value="Kids Fashion" id="group_622013395_5" role="checkbox" class="ss-q-checkbox valid" aria-required="true" type="checkbox" ></span>
+<span class="ss-choice-label">Kids</span>
+</label></li> <li class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input name="entry.622013395" value="All Category" id="group_622013395_6" role="checkbox" class="ss-q-checkbox valid" aria-required="true" type="checkbox" ></span>
+<span class="ss-choice-label">All</span>
+</label></li>
+<div class="clearfix"></div>
+</ul>
+          </div>
+          <div class="dealform_filed">
+          <div class="dodinputfiled">
+          <input name="entry.2056924394" value="" class="ss-q-short required" id="entry_2056924394" dir="auto" aria-label="Email  " aria-required="true" required="" title="" type="email" placeholder="Email id">
+                    <!--<div class="faerror">Invalid Email Address!</div>
+                    <div class="fafinal">Thank You for subscribe us</div>-->
+                    
+                    <input type="submit" name="REGISTER" value="Subscribe" id='submit' class="fabtn faXcall">
+                    
+               
+                    </div>
+            </div>
+          </form>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"> </iframe> 
+          
+          		   <!--<button class="faclick">Click</button>-->
+          <div class="divforapp"><p style="margin-top:0%"></p></div>      
+                
+          </div>
+       <!--SUBSCRIBE END--> 
+    
+        <!-- Footer banner -->
+        <div class="sectionX footerBanner" >
+         <div class="offerCont_wrap">                
+            <div class="offerLongBannerX">
+                <ul id="footerBanner_List" class="inactive">                                            
+                  <li class="OffersContentBoxLi  swiper-slide">
+                        <div class="Soldout">
+                            <div class="soldOut_btn">Sold Out</div>
+                        </div>
+                        
+                        <div class="toolTip-box-outer sdTooltipWrapper col-lg-15 col-md-19 col-xs-15 infodata" id="ratings-details-box-outer">
+                                                    
+								</div>
+                       
+                        <div class="OffersContentBox">
+                            <a class="OffersContentBoxLink" target="_blank" href="">
+                                <div class="OffersContentIMG "><div class="comp-animated-icon1 "><span class="animated-icon1" data-pog="">
+                                                     <i class="sd-icon sd-icon-like1-outline1 heart-icon animated-font-pre"></i></span></div> <img  data-src="" class="lazy-load" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div>
+                                <div class="OffersContTxt">
+                                    <div class="wrapCenterCont">
+                                        <div class="centeredContX">
+<div class="OfferGoldx"><span class="OfferGold"></span><span class="faquickview">Quick View <i class="sd-icon sd-icon-quick-view "></i></span></div>
+                                            <div class="OfferDiscount">
+                                                <div class="OfferDiscount_Discount"></div>
+                                            </div>
+                                            <div class="OffersTitle "> </div>
+                                            <div class="rating_Wrap">
+                                                <div class="OfferHighlights">
+                                                    <div class="ratingBG_disabled"></div>
+                                                    <div class="ratingBG_active"> </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="priceTagline_relWrap">
+                                                <div class="DoubleOfferTxtWrpr">
+                                                    <div class="OffeRLft">
+                                                        <div class="StdFonTBLK tagLine1"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="priceContX"> <span class="OfferMRP_Price"></span> <span class="OfferPrice_Price"></span><span class="OfferDiscount"><span class="OfferDiscount_Discount"></span></span> </div>
+                                            </div>
+                                            <div class="cashBackX_priceEffect_heightWrap">
+                                                <div class="cashBackX_RelWrap">
+                                                    <div class="cashBackX_wrap"> </div>
+                                                </div>
+                                                <div class="PriceEffect_wrap"> </div>
+                                            </div>
+                                            <div class="cta_Wrap"> <span class="cta_Text">
+                                                                Shop Now
+                                                            </span> </div>
+                                        </div>
+                                    </div>
+                                    <!--//end of wrapCenterCont-->
+                                </div>
+                            </a>
+                        </div>
+                    </li>                         
+                </ul>
+            </div>
+        </div>        
+        </div>            
+        <!-- Footer ends -->
+        
+        
+          
+            </div>        
+            
+
+    
+    
+    
+        </div>
+        
+
+    </div>
+   
+  </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- core mod js-->
+<script>
+
+// Lazy Load
+var Snapdeal = Snapdeal || {};
+Snapdeal.lazyLoad = (function() {
+    "use strict";
+    var fn, api, defaults;
+    defaults = {
+        interval: 200
+    }
+    fn = {
+        _init: function() {
+            window.setInterval(fn._lazyLoadImages, defaults.interval)
+        },
+        _lazyLoadImages: function() {
+            $(".lazy-load").each(function(index, value) {
+                var checkIfImageAlreadyLoaded = (value.getAttribute('data-bgsrc') || value.getAttribute('data-src')) ? true : false;
+                var hiddenInview = $(value).hasClass('hidden-inview') || false;
+                if (checkIfImageAlreadyLoaded && fn._isElementVisible(value, hiddenInview)) {
+                    fn._loadImage(value, function(element) {
+                        setTimeout(function() {
+                            $(element).addClass('wooblex');
+                            setTimeout(function() {
+                                $(element).removeClass('lazy-load');
+                            }, 300)
+                        }, 60);
+                        element.removeAttribute("data-src");
+                        element.removeAttribute("data-bgsrc");
+                    });
+                }
+            });
+        },
+        _isElementVisible: function(element, hiddenInview) {
+            var rectValues = element.getBoundingClientRect(),
+                viewportWidth = window.innerWidth || document.documentElement.clientWidth,
+                viewportHeight = window.innerHeight || document.documentElement.clientHeight,
+                detectCorner = function(x, y) {
+                    return document.elementFromPoint(x, y)
+                };
+            // Check for complete element not in the viewport
+            if (rectValues.right < 0 || rectValues.bottom < 0 || rectValues.left > viewportWidth || rectValues.top > viewportHeight) {
+                return false;
+            }
+            // Check for complete element in the viewport
+            if (!hiddenInview && rectValues.left >= 0 && rectValues.top >= 0 && rectValues.right <= viewportWidth && rectValues.bottom <= viewportHeight) {
+
+                return true;
+            }
+            // Check for partial element in the viewports
+            return (element.contains(detectCorner(rectValues.left, rectValues.top)) || element.contains(detectCorner(rectValues.right, rectValues.top)) || element.contains(detectCorner(rectValues.right, rectValues.bottom)) || element.contains(detectCorner(rectValues.left, rectValues.bottom)));
+        },
+        _loadImage: function(element, callback) {
+            var isBackgroundImage = element.getAttribute('data-bgsrc') ? true : false,
+                tempImg = new Image(),
+                src = isBackgroundImage ? element.getAttribute('data-bgsrc') : element.getAttribute('data-src');
+            tempImg.onload = function() {
+                if (isBackgroundImage) {
+                    element.style.backgroundImage = "url(" + src + ")";
+                } else {
+                    element.src = src;
+                }
+                callback ? callback(element) : null;
+            }
+            tempImg.onerror = function() {
+                if (isBackgroundImage) {
+                    element.style.backgroundImage = src;
+                } else {
+                    element.src = src;
+                }
+                callback ? callback(element) : null;
+            }
+            tempImg.src = src;
+        }
+    };
+    api = {
+        init: function() {
+            return fn._init.apply(this, arguments);
+        },
+        isElementVisible: function() {
+            return fn._isElementVisible.apply(this, arguments);
+        }
+    };
+    return api;
+})();
+$(function() {
+    Snapdeal.lazyLoad.init();
+});
+// /Lazy Load
+
+// MobileSiteQuery
+var MobPlatform_M = (function() {
+    var public = {};
+    public.mobileSite_running = false;
+    public.mobileSite_TrueX999 = function() {
+        var currURLX = window.location;
+        var mob_preURL_str = 'm.snapdeal.com';
+        currURLX = String(currURLX);
+        public.mobileSite_running = (currURLX.indexOf(mob_preURL_str) > 0) ? true : false;
+        return public.mobileSite_running;
+    };
+    return public;
+})();
+// /MobileSiteQuery
+
+// SocialShare
+var socialShareX_Module = function() {
+    function t(t, o) {
+        return t.classList.contains(o) ? t : e(t, o)
+    }
+
+    function e(t, e) {
+        for (;
+            (t = t.parentElement) && !t.classList.contains(e););
+        return t
+    }
+    var o = document.getElementsByClassName("shareX99_wrapper")[0];
+    if (!o) return void console.log(".shareX99_wrapper not found");
+    var n = o.querySelectorAll(".shareIconX_icoWrapper li");
+    if (!n) return void console.log(".shareIconX_icoWrapper not found");
+    var a = o.querySelector("li.whatsappX"),
+        s = MobPlatform_M.mobileSite_TrueX999();
+    s ? a && (a.style.display = "block") : a && (a.style.display = "none");
+    for (var i = window.location.href, r = {
+            facebookX: "https://www.facebook.com/sharer.php?u=",
+            twitterX: "https://twitter.com/intent/tweet?url=",
+            googleplusX: "https://plus.google.com/share?url=",
+            pinterestX: "https://pinterest.com/pin/create/bookmarklet/?url=",
+            whatsappX: "whatsapp://send?text="
+        }, l = "data-hashtag", c = "unit_socialX99", p = 0; p < n.length; p++) n[p].addEventListener("click", function(e) {
+        e.preventDefault();
+        var o = "",
+            n = e.target;
+        if (n = t(e.target, c), !n || null === n) return void console.log("clicked_targetClass_elem not found!");
+        var a = n.getAttribute(l);
+        n.classList.contains("facebookX") ? o = r.facebookX + i : n.classList.contains("twitterX") ? o = a ? r.twitterX + i + "&hashtags=" + a : r.twitterX + i : n.classList.contains("googleplusX") ? o = r.googleplusX + i : n.classList.contains("pinterestX") ? o = r.pinterestX + i : n.classList.contains("whatsappX") && (o = r.whatsappX + i), console.log("finalURL: ", o);
+        var s = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+            p = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        window.open(o, "shareWindow", "height=450, width=550, top=" + (p / 2 - 275) + ", left=" + (s / 2 - 225) + ", toolbar=0, location=0, menubar=0, directories=0, scrollbars=0")
+    })
+}();
+// /SocialShare
+
+
+////////// Page Utilities
+///*** global vars to check if windowHasLoaded && ajaxHasStopped ?
+var mainWrapperX99 = $('#mainWrapperX_testX999');
+var windowHasLoadedK = false,
+    ajaxHasStoppedK = false,
+    appendJsonDataState = false,
+    ajaxSuccessStateX99 = false;
+///* * * Dom manipulations
+var wrapperX = $('.sectionOfferWrapper'),
+    loaderX999_Wrapper = $('.loaderX999_wrapper');
+///* * * remove fadeInWrapper and removeLoader        
+function fadeIn_wrapperXRemoveLoader() {
+    loaderX999_Wrapper.removeClass('displayOnX');
+    wrapperX.removeClass('hideOpacityBG');
+}
+///* * * removeInactive_templateClass
+function removeInactive_templateClass() {
+    var ele = $('.inactive');
+    ele.each(function() {
+        var $this = $(this);
+        $this.removeClass('inactive');
+    })
+    console.log('removeInactive_templateClass ran successfully!');
+}
+// local tests
+//setTimeout(fadeIn_wrapperXRemoveLoader, 2000);
+//setTimeout(removeInactive_templateClass, 3000);
+window.onload = function() {
+    windowHasLoadedK = true;
+}
+
+function query_windowLoadAndAjaxStopStateX() {
+    if (windowHasLoadedK && ajaxHasStoppedK) {
+        return true;
+    } else {
+        setTimeout(query_windowLoadAndAjaxStopStateX, 100);
+    }
+}
+
+
+
+
+    $(document).ready(function() {
+        ucxoxo();
+    });
+
+
+	
+function ucxoxo() {
+
+    var mktName = document.getElementById('mktName');
+  if (!mktName) {
+        return;
+   }
+  var url = (window.admin && window.admin == 'true' ? '/admin' : '') + '/get/offers/jsonList/' + mktName.value;
+    //var url='test.json';
+	$.ajax({
+        url: url,
+        type: "GET",
+        dataType: 'json',
+        success: function(data) {
+            appendJsonData(data);
+            queryAppendJsonDataState_update();
+			//call ratings
+			kola();
+        },
+        error: function(req, txt, err) {
+            var errObj = JSON.parse(req.responseText);
+            console.log(errObj.message);
+        }
+    });
+    //on success of all innerAjax calls
+    $(document).ajaxSuccess(function(event, xhr, settings) {
+        if (settings.url == url) {
+            ajaxHasStoppedK = true;
+            ajaxSuccessStateX99 = true;
+            setTimeout(function() {
+                //allTrue_runPaginationNControlsUpdate();
+            }, 1000)
+        }
+    });
+
+    //hide elemetns for http: shit
+
+}
+
+//ajaxUtit fns 
+if ($('.OfferDiscount_Discount').text() != '') {
+    $(this).css('opacity', '1');
+}
+
+function queryAppendJsonDataState_update() {
+    if (appendJsonDataState) {
+        setTimeout(removeInactive_templateClass, 699);
+        return true;
+    } else {
+        setTimeout(queryAppendJsonDataState_update, 60);
+    }
+}
+
+
+	function kola(){
+		
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ 			//bhai spare me i am mobile i dont suppport hover
+		}
+		else{
+		//lovely ratings
+	$('.infodata').hide();
+		
+		$('.infodata').html('<div class="faload_wrap"><img class="faload" src="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/001cr/ring-alt.gif"></div>');
+		$('.infodata').css('min-height','146px');
+		$('.faload_wrap').show();
+		
+	$('.OfferHighlights').mouseover(function(){
+		//now opening fucntion
+		
+		
+		console.log('callbox');
+		
+		var lop=$(this);
+		var ch=$(lop).closest('li').find('.infodata');	
+		var li=$(lop).closest('li')
+		var pogr=$(lop).closest('li').attr('id');
+		
+		if ($(li).hasClass('Hasid') == true) {
+			
+		$(ch).show();
+		
+		
+		$.ajax({
+        //url: 'ratings.html',
+		url:'https://www.snapdeal.com/review/stats/'+pogr,	
+        type: "GET",
+        dataType: 'html',
+        success: function(data) {
+            //console.log(data);
+			console.log('calldata');
+			//$(ch).find('.faload_wrap').hide();
+			$(lop).closest('li').find('.infodata').empty();			
+			$(lop).closest('li').find('.infodata').append(data);
+			$(lop).closest('li').find('.infodata').show();
+			$(ch).find('.barover').addClass('xola');
+			$(ch).find('.barover').css('trasition','all 2.4s ease');
+        },
+        error: function(req, txt, err) {
+            var errObj = JSON.parse(req.responseText);
+            console.log(errObj.message);
+        }
+    });
+		}
+		//now closing function
+	});
+	
+
+$('.OfferHighlights').mouseleave(function(){
+	$('.infodata').hide();
+});
+		
+		$('.resp_LiX ul li').hover(function(){
+			$('.infodata').hide();
+		});
+		}
+		
+	}
+
+
+function appendJsonData(data) {
+    if (!data || data.length == 0) {
+        return;
+    }
+    var pogIdList = [];
+    var offerDivLiArr = document.getElementsByClassName('OffersContentBoxLi');
+    if (!offerDivLiArr || offerDivLiArr.length == 0) {
+        return;
+    }
+    $(offerDivLiArr).addClass("emptyTestLi");
+    $(offerDivLiArr).css("display", "none");
+    var offerDivLi = offerDivLiArr[0];
+    //$(offerDivLi.parentNode).css('display', 'inline-block');
+    for (var index = 0; index < data.length; index++) {
+        var offer = data[index];
+        var ul = document.getElementById(offer.categoryName + "_List");
+        if (!ul) {
+            continue;
+        }
+
+        var li = $(offerDivLi).clone(true, true);
+        $(li).css('display', 'inline-block');
+        $(li).removeClass('emptyTestLi');
+        $(ul).append(li);
+        if (offer.pogId && offer.pogId != '') {
+            $(li).attr('id', offer.pogId);
+            $(li).addClass('Hasid');
+
+            if ($(li).hasClass('Hasid') == false) {
+                $(li).find('.comp-animated-icon1').hide();
+                $(li).find('.faquickview').hide();
+                $(li).find('.OfferGold').hide();
+				
+            }
+			else{				
+				$(li).attr('data-xprice',offer.priceSlab);
+				$(li).attr('data-sd',offer.buttonMobImageUrl);
+			}
+            pogIdList.push(offer.pogId);
+        }
+        setData(offer, li);
+    }
+    $(".emptyTestLi").remove();
+    if (pogIdList && pogIdList.length > 0) {
+        fetchPOGData(pogIdList);
+    }
+    //update appendJsonDataState
+    appendJsonDataState = true;
+}
+
+function setData(offer, li, pogId) {
+    if (pogId) {
+        if (offer.sdGold) {
+            var offersdGold = $(li).find('.OfferGold')[0];
+            $(offersdGold).parent().find('.faquickview').addClass('facenter');
+            if (offersdGold) {
+                if (offer.sdGold == true) {
+                    $(offersdGold).css('display', 'inline-block');
+                    $(offersdGold).parent().find('.faquickview').removeClass('facenter');
+                    $(offersdGold).closest('.faquickview').removeClass('facenter');
+                }
+                if (offer.sdGold == false) {
+                    $(offersdGold).css('display', 'none');
+                    $(offersdGold).parent().find('.faquickview').addClass('facenter');
+                }
+
+            }
+        }
+
+        if (offer.displayPrice) {
+            var offerPricePrice = $(li).find('.OfferPrice_Price')[0];
+            if (offerPricePrice) {
+                offerPricePrice.innerHTML = "<span>Rs.&nbsp;</span>" + offer.displayPrice;
+				//var roleme=offer.displayPrice;
+				//coke(roleme);
+            }
+        }
+
+        //display saveAmount
+        var saveAmt = offer.price - offer.displayPrice;
+        var wrap_saveAmt = $(li).find('.wrap_saveAmt')[0];
+        if (wrap_saveAmt && saveAmt > 0) {
+            wrap_saveAmt.innerHTML = "You save <span>Rs.&nbsp;</span>" + saveAmt;
+        }
+
+        if (offer.walletCashBackValueInt && offer.walletCashBackValueInt > 0) {
+            var effectivePrice = $(li).find('.cashBackX_wrap')[0];
+            if (effectivePrice) {
+                $(effectivePrice).css('display', 'inline-block');
+                var cashBackEls = "<span class='cashBackX_img'></span>" + "<span class='cashBackX_getTxt'>" + "<span class='cashBackX_conditional'>Get</span>" + " Cashback:</span>" + " Rs.&nbsp;" + (offer.walletCashBackValueInt);
+                effectivePrice.innerHTML = cashBackEls;
+            }
+        }
+        /* if rating is defined */
+        //rating exists only for pogid products
+        var eleClass = $(li).find(".ratingBG_active"),
+            mainRatingWrap_highlights = eleClass.parent(".OfferHighlights");
+        if (offer.avgRating || !offer.avgRating == 0) {
+            mainRatingWrap_highlights.css("opacity", 1);
+            setRating(eleClass, offer.avgRating);
+            if (offer.noOfRatings) {
+                var numberRatings = offer.noOfRatings;
+                mainRatingWrap_highlights.after("<span class='numberRevsX'> &nbsp; (" + numberRatings + ")</span>");
+                //var numberRatings_content = '(' + numberRatings + ')';
+                //$(li).find('span.numberRevsX').html(numberRatings_content);
+            }
+
+        }
+        if (offer.walletCashBackValueInt && offer.walletCashBackValueInt > 0) {
+            var PriceEffect = $(li).find('.PriceEffect_wrap')[0];
+            if (PriceEffect) {
+                $(PriceEffect).css('display', 'inline-block');
+                var cashBackEffectEls = "<span class='PriceEffect_getTxt'>" + "<span class='PriceEffect_conditional'>Effective</span>" + " Price: </span>" + " Rs. " + (offer.displayPrice - offer.walletCashBackValueInt);
+                PriceEffect.innerHTML = cashBackEffectEls;
+            }
+        }
+        /*edit*/
+        /*edit if discount is 0 or less than 10 then remove li*/
+        /*if (offer.discount == 0 || offer.discount && offer.discount < 10) {
+            $(li).remove();
+        }*/
+        /*edit if discount is 0 or less than 10 then remove li*/
+        if (offer.discount && offer.discount >= 10) {
+            var offerDiscount = $(li).find('.OfferDiscount_Discount')[0];
+            //discount defined then opacity 1
+            $(offerDiscount.parentNode).css('opacity', '1');
+            if (offerDiscount) {
+                offerDiscount.innerHTML = offer.discount + "% Off";
+            }
+        } else {
+            var offerDiscount = $(li).find('.OfferDiscount_Discount')[0];
+            if (offerDiscount) {
+                $(offerDiscount.parentNode).css('opacity', '0');
+            }
+        }
+        /*edit*/
+        if (offer.price && (offer.discount && offer.discount > 0)) {
+            var offerMRPPrice = $(li).find('.OfferMRP_Price')[0];
+            if (offerMRPPrice) {
+                offerMRPPrice.innerHTML = "<span>Rs. </span>" + "<span class='offerMRP_Price_span'>" + offer.price + "</span>" + "&nbsp; &nbsp;";
+            }
+        }
+        if (offer.price == offer.displayPrice) {
+            var offerMRPPrice = $(li).find('.OfferMRP_Price')[0];
+            if (offerMRPPrice) {
+                $(offerMRPPrice).css('display', 'none');
+            }
+        }
+		
+		 if (offer.price == offer.displayPrice) {
+            var offerMRPPrice = $(li).find('.OfferMRP_Price')[0];
+            if (offerMRPPrice) {
+                $(offerMRPPrice).css('display', 'none');
+            }
+        }
+		
+        if (offer.soldOut) {
+            var soldOutDiv = $(li).find('.Soldout')[0];
+            if (soldOutDiv) {
+                //$(soldOutDiv).css('display', 'block');
+                $(soldOutDiv).css('display', 'block').parents("li.OffersContentBoxLi").remove();
+            }
+            var shopBtn = $(li).find('.OffersContRGT')[0];
+            if (shopBtn) {
+                $(shopBtn).css('opacity', '0');
+            }
+            var pageLink = $(li).find('.OffersContentBoxLink')[0];
+            if (pageLink) {
+                $(pageLink).removeAttr('href');
+                $(pageLink).removeAttr('target');
+            }
+        }
+        return;
+    }
+    if (offer.categoryName) {
+        $(li).addClass(offer.categoryName);
+    }
+    if (offer.offerPageUrl) {
+        var offersContentBoxLink = $(li).find('.OffersContentBoxLink')[0];
+        if (offersContentBoxLink) {
+            $(offersContentBoxLink).attr('href', offer.offerPageUrl);
+        }
+    }
+    if (offer.offerImageUrl) {
+        var offersContentIMG = $(li).find('.OffersContentIMG img')[0];
+        if (offersContentIMG) {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $(offersContentIMG).attr('src', offer.offerImageUrl.replace('n1.sdlcdn.com', 'n' + (Math.floor(Math.random() * 4) + 1) + '.sdlcdn.com'));
+            } else {
+
+                $(offersContentIMG).attr('data-src', offer.offerImageUrl.replace('n1.sdlcdn.com', 'n' + (Math.floor(Math.random() * 4) + 1) + '.sdlcdn.com'));
+            }
+
+        }
+    }
+    if (offer.offerName) {
+        var offersTitle = $(li).find('.OffersTitle')[0];
+        if (offersTitle) {
+            offersTitle.innerHTML = offer.offerName;
+            $(offersContentIMG).attr('alt', offer.offerName);
+			$(offersTitle).attr('title', offer.offerName);
+        }
+    }
+    if (offer.tagLine) {
+        var tag = offer.tagLine.split(";");
+        if (tag) {
+            if (tag.length > 0) {
+                var tagLine1 = $(li).find('.DoubleOfferTxtWrpr .tagLine1')[0];
+                if (tagLine1) {
+                    tagLine1.innerHTML = tag[0];
+                }
+            }
+            if (tag.length > 1) {
+                var tagLine2 = $(li).find('.DoubleOfferTxtWrpr .tagLine2')[0];
+                if (tagLine2) {
+                    tagLine2.innerHTML = tag[1];
+                }
+            }
+        }
+    }
+    if (offer.highlights) {
+        var offerHighlights = $(li).find('.OfferHighlights')[0];
+        offerHighlights.innerHTML = offer.highlights.replace(";", ", ");
+    }
+	
+   
+    if (offer.buttonImageUrl) {
+        var offersContRGTImg = $(li).find('.OffersContRGT img')[0];
+        if (offersContRGTImg) {
+            $(offersContRGTImg).attr('src', offer.buttonImageUrl);
+        }
+    }
+}
+
+function fetchPOGData(pogIdList) {
+    var pogIds = 'pogIds=' + pogIdList.join(',');
+    $.ajax({
+       url: (window.admin && window.admin == 'true' ? '/admin' : '') + '/acors/json/getProductById?' + pogIds,
+       // url:'https://offers.snapdeal.com/api/json/rest/getProductByIds?'+ pogIds,
+		type: "GET",
+        dataType: 'json',
+        success: function(data) {
+            appendPOGJsonData(data);
+			//console.log(data);
+        },
+        error: function(req, txt, err) {
+            var errObj = JSON.parse(req.responseText);
+            console.log(errObj.message);
+        }
+    });
+}
+
+function appendPOGJsonData(data) {
+    if (!data || data.length == 0) {
+        return;
+    }
+    for (var index = 0; index < data.length; index++) {
+        var offer = data[index];
+        var li = document.getElementById(offer.id);
+        setData(offer, li, true);
+		var roleme=offer.displayPrice;
+		
+		var sdplus=offer.sdPlusProduct;
+		coke(roleme,sdplus,li,true);
+    }
+}
+
+
+//coke function
+	function coke(roleme,sdplus,li){
+
+		if($(li).data('xprice')!=""||$(li).data('sd')!=""||$(li).data('sd')!=0){
+			//console.log($(li).attr('id')+'empty');	
+			var thispr=$(li).data('xprice');
+			var zz=$(li).data('sd');
+			var csvp=parseInt(thispr);
+			//console.log(csvp+' cdisp:'+roleme);
+			if(roleme>=csvp){
+				console.log('Non active deals active');	
+				$(li).hide();
+			}
+			else{
+				//console.log('show me');
+			}	
+			
+			if(zz==1){
+				if(sdplus==true){
+				console.log('showin sd products in the page'+$(li).attr('id'));	
+				//$(li).hide();
+				}
+				else if(sdplus==false){
+					console.log('non sd products in the page'+$(li).attr('id'));	
+				 $(li).hide();
+				}
+			}
+			
+				
+        }
+		//$('.faload_wrap').fadeOut();
+		//Snapdeal.lazyLoad.init();
+		//removeInactive_templateClass();
+	
+	}
+	
+
+//show ratings
+function setRating(eleClass, val) {
+    //hard code width value to avoid undue DOMquery
+    var width = 70,
+
+        thisEle = eleClass,
+        val_Stringed = val.toString(),
+        widthFactor = 0;
+    //if val is less than 1 then nothing
+    if (val < 1 || val > 5) {
+        //thisEle.style.width = widthFactor + "px";
+        thisEle.width(widthFactor);
+        //return false;
+    }
+    widthFactor = ((((val_Stringed / 5) * 100) / 100) * width);
+    widthFactor = Math.round(widthFactor * 10) / 10;
+    thisEle.width(widthFactor);
+}
+//end show ratings
+
+</script>
+
+
+<!-- for submit and keypad fix-->
+<script>
+	function yoloKR(){
+				
+		//call sweep (extra)
+		var glob=[];
+			$('.ss-q-checkbox').each(function() {
+                if($(this).is(':checked')){
+					glob.push($(this).attr('value'));
+					//console.log('checked'+$(this).attr('value'));
+				}
+				else{
+				//console.log('not checked'+$(this).attr('value'));	
+				}
+            });
+			
+			console.log('result:'+glob);
+			sweep(glob);
+		//end of call sweep extra
+			
+			setTimeout(function(){
+			$("form").trigger("reset");
+		}, 500);
+		$('.subsribe_text, .dealform_filed').fadeOut(100);
+		$('.subthankyou_text').fadeIn(500);
+		$('.divforapp').hide();
+			
+		}	
+		
+		//delete me i am extra button content
+		//$('.faclick').click(function(){
+//			
+//		});
+		
+		
+		function sweep(glob){
+	/*Porduct Team Not Working API ( may be now its working )*/	
+var emailx=$('#entry_2056924394').val();
+
+
+var xdata='{"sweepstakeFormId": "DODSweep1", "sweepstakeQs":["'+glob+'"], "sweepstakeAs":[], "alertEmail":"'+emailx+'"}';
+
+var podata=JSON.parse(xdata);
+console.log('podata'+JSON.stringify(podata));
+$.ajax({
+  type: "POST",
+  url: '/sweepstakesDPCall',
+  data: JSON.stringify(podata),
+  datatype:"json",
+  contentType: "application/json; charset=utf-8",
+  crossDomain: true,
+  success: function(data) {
+		console.log('Sweep success');
+       },
+  error: function(xhr, textStatus, error) {
+    // $('.faresult').html('error:'+xhr.statusText+'status:'+textStatus+'error:'+error);
+	console.log('Sweep found error but success');
+  }
+});
+
+}
+
+
+
+		 
+	
+		//var checklogins = getCookie('lu');
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+											
+							$('#entry_2056924394').click(function(){						
+									$('.divforapp').show();						
+								 $('html, body').animate({
+       								 scrollTop: $(".divforapp p").offset().top
+    								}, 1000);
+							});
+							
+							var mobgetemail = getCookie('eid');
+				if(getCookie('eid')){
+						  $('#entry_2056924394').val(mobgetemail.split('"').join(''));
+				}
+						  
+                     
+						
+					 }
+					
+					else{
+						function getCookie(cname) {
+						   var name = cname + "=";
+						   var ca = document.cookie.split(';');
+						   for(var i = 0; i <ca.length; i++) {
+							   var c = ca[i];
+							   while (c.charAt(0)==' ') {
+								   c = c.substring(1);
+							   }
+							   if (c.indexOf(name) == 0) {
+								   return c.substring(name.length,c.length);
+							   }
+						   }
+						   return "";
+						}
+						
+						var mobgetemail = getCookie('eid');	
+						  
+						  $('#entry_2056924394').val(mobgetemail.split('"').join(''));
+                        
+						 
+					
+					}
+					
+					
+					
+					
+					/*var WapAppInfo =navigator.userAgent.indexOf('WapAppInfo');
+					var formInputX = document.getElementById('entry_2056924394');
+					var divForApp = document.getElementsByClassName('divforapp');
+					console.log('WapAppInfo: ', WapAppInfo);
+					
+					formInputX.addEventListener('click', function(){
+						if(WapAppInfo){
+							divForApp.style.display = 'block';
+						}											
+					});	*/
+					
+				
+		
+		$('.dealform_filed input[type=checkbox]').click(function(){
+			if($('.dealform_filed input[type=checkbox]').is(':checked')){
+			$('.dealform_filed input[type=checkbox]').removeAttr('required');
+			}
+			});
+			
+			
+
+
+</script>
+
+
+<!-- For Left Nav -->
+
+<script>
+var Update_leftNavMenuRevampOffsetLeft=function(){function i(){var a=document.body.getBoundingClientRect(),b=c.getBoundingClientRect(),g=b.left-a.left,h=g-f+d;e.style.cssText="left:"+(h-200)+"px !important"}function j(a,b,c){var d;return function(){var e=this,f=arguments,g=function(){d=null,c||a.apply(e,f)},h=c&&!d;clearTimeout(d),d=setTimeout(g,b),h&&a.apply(e,f)}}var a={},b=!0,c=document.getElementsByClassName("menuIconBar")[0];if(c&&null!==c)var d=c.offsetWidth;else console.log(".menuIconBar not found!"),b=!1;var e=document.getElementById("leftNavMenuRevamp");if(e&&null!==e)var f=e.offsetWidth;else console.log("#leftNavMenuRevamp not found!"),b=!1;return a.init=function(){if(b===!1)return void console.log("DOMelemsFound was false, Update_leftNavMenuRevampOffsetLeft.init did not run!");i();var a=j(function(){console.log("running Update_leftNavMenuRevampOffsetLeft"),i()},250);window.addEventListener("resize",a)},a}();
+Update_leftNavMenuRevampOffsetLeft.init();
+</script>
+
+
+</html>

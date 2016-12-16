@@ -429,13 +429,13 @@ console.log("finalURL: ",n);var i=window.innerWidth||document.documentElement.cl
 <script>
   console.log('enhanced...15Dec2016');
   //predefining url because app does not support window.location.href
-  //var liveURLx = 'test-z666';
+  var liveURLx = 'deal-of-the-day';
   //local
   var local_testURL = (window.admin && window.admin == 'true' ? '/admin' : '') + "csvData_mobileapi6.json";
   //live
   var pre_liveURLx = 'https://mobileapi.snapdeal.com/service/generic/get/getGenericOffer?landingPage=';
-  var post_liveURLx = '&start=0&count=100';
-  var predefined_url = 'https://mobileapi.snapdeal.com/service/generic/get/getGenericOffer?landingPage=test-z666&start=0&count=100';
+  var post_liveURLx = '&start=0&count=150';
+  var predefined_url = pre_liveURLx + liveURLx + post_liveURLx;
   //final url to be consumed
   var use_finalURLx = '';
   // * * * pass local_testURL as get_use_finalURLx(local_testURL) for LOCAL TESTS * * *//

@@ -21,7 +21,7 @@
   li.dodSuperDeal_unit  {
     &:nth-child(2){
       border-top : 1px solid #EBEAEA;
-      @include breakpoint(1024px){
+      @include breakpoint(999px){
         border-top: 0;
       };
     }
@@ -140,7 +140,7 @@
 
 .dodSuperDealUnit_ev {
   //cursor: pointer;
-  max-width: 482px;
+  //max-width: 482px;
 
   .offerUnit_href_afterWrap {
     padding: 0.6em 0;

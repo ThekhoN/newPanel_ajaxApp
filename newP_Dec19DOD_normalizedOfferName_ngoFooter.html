@@ -5,8 +5,8 @@
   <!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"> -->
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="stylesheets/screen.css">
-  <!-- <link rel="stylesheet" href="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/x_999/dod_22Dec2016.css"> -->
+  <!-- <link rel="stylesheet" href="stylesheets/screen.css"> -->
+  <link rel="stylesheet" href="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/x_999/dod_16Dec2016_05.css">
 
   <script type="text/javascript">
     var pictureTag_supported = !!window.HTMLPictureElement;
@@ -340,18 +340,16 @@
 
         <!--SUBSCRIBE-->
         <div class="sectionX dod_subscribe">
-          <div class="relWrapper_anim">
-            <div id="dod_innerMain" class="dod_inner">
+          <div class="dod_inner">
               <div class="dodHeading subsribe_text"> Get <span> daily alerts </span> for deals of the day! </div>
-              <div class="subsribe_btn" >
+              <div class="subsribe_btn">
                   <div class="preferCategoryHeading subsribe_text">Choose category/categories :</div>
                   <div class="subscribe_form">
-                      <form action="https://docs.google.com/forms/d/e/1FAIpQLSdLUEP2R89tJJ4D2SYb7zAB-7TpAH9xUDcbo1Noj0CoHnzKbA/formResponse" method="POST" id="ss-form" target="hidden_iframe" class="infocusform" onsubmit="validateDodFormSubmit();">
+                      <form action="https://docs.google.com/forms/d/e/1FAIpQLSdLUEP2R89tJJ4D2SYb7zAB-7TpAH9xUDcbo1Noj0CoHnzKbA/formResponse" method="POST" id="ss-form" target="hidden_iframe" class="infocusform" onsubmit="yoloKR();">
                           <div class="dealform_filed">
-
                             <ul class="listingdiv">
                                       <li> <label>
-                                <input name="entry.622013395" value="Home &amp; Daily Needs" id="group_622013395_1" role="checkbox" class="ss-q-checkbox valid"  aria-required="true" type="checkbox" >
+                                <input name="entry.622013395" value="Home &amp; Daily Needs" id="group_622013395_1" role="checkbox"  aria-required="true" type="checkbox" >
                                 <label class="caption" for="group_622013395_1">Home &amp; Daily Needs</label> </label>
                                       </li>
                                       <li> <label>
@@ -376,26 +374,16 @@
                             </ul>
                           </div>
                           <div class="dealform_filed">
-                            <div class="formErrorLog"></div>
-                            <div class="dodinputfiled"> <input name="entry.2056924394" value="" class="sub_submit" id="entry_2056924394" dir="auto" aria-label="Email  " aria-required="true" required="" title="" type="email" placeholder="Please enter your email ID"> <input class="sub_button btn-3 submitFormX99" type="submit" name="REGISTER" value="Subscribe" id='submit' > </div>
-
+                            <div class="dodinputfiled"> <input name="entry.2056924394" value="" class="sub_submit" id="entry_2056924394" dir="auto" aria-label="Email  " aria-required="true" required="" title="" type="email" placeholder="Please enter your email ID"> <input type="submit" name="REGISTER" value="Subscribe" id='submit' class="sub_button btn-3"> </div>
                           </div>
                       </form>
                   </div>
-
-
-                  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"> </iframe>
+                  <div class="subthankyou_text">Thank you for the subscription. We will keep you posted.</div> <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"> </iframe>
                   <!--<button class="faclick">Click</button>-->
                   <div class="divforapp">
                       <p style="margin-top:0%"></p>
                   </div>
               </div>
-          </div>
-            <div id="subthankyou_text_Wrapper" class="hiddenX99">
-              <div class="subthankyou_text">
-                Thank you for the subscription.<span class="conditionalDisplayX99"><br></span> We will keep you posted...
-              </div>
-            </div>
           </div>
         </div>
         <!--/SUBSCRIBE-->
@@ -420,18 +408,16 @@
 </script>
 <!--ajaxApp-->
 
-<!-- <script src="js/bundle.js"></script> -->
-<script src="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/x_999/ajaxApp_22Dec2016.js"></script>
-
-
+<script src="js/bundle.js"></script>
+<!-- <script src="https://i1.sdlcdn.com/static/img/marketing-mailers/mailer/2016/x_999/ajaxApp_16Dec2016_03.js"></script> -->
 
 <script>
-  console.log('live...22Dec2016 v3');
+  console.log('live...16Dec2016 v3');
   //predefining url because app does not support window.location.href
   var liveURLx = 'deal-of-the-day';
   var test_OfferName = 'test-z666';
   //local
-  var local_testURL = (window.admin && window.admin == 'true' ? '/admin' : '') + "csvData_mobileapi7.json";
+  var local_testURL = (window.admin && window.admin == 'true' ? '/admin' : '') + "csvData_mobileapi6.json";
   //live
   var pre_liveURLx = 'https://mobileapi.snapdeal.com/service/generic/get/getGenericOffer?landingPage=';
   var post_liveURLx = '&start=0&count=150';
@@ -440,8 +426,7 @@
   //final url to be consumed
   var use_finalURLx = '';
   // * * * pass local_testURL as get_use_finalURLx(local_testURL) for LOCAL TESTS * * *//
-  var test_url99 = 'https://mobileapi.snapdeal.com/service/generic/get/getGenericOffer?landingPage=test-z999&start=0&count=100';
-  var url = get_use_finalURLx();
+  var url = get_use_finalURLx(local_testURL);
 
   function get_use_finalURLx(local_testURL) {
     //if local
@@ -498,12 +483,103 @@
     url:url,
     //showSoldOut_g: true
   });
-  //_AjaxApp.init();
+  _AjaxApp.init();
 </script>
 
 <!--form subscription-->
-<script src="js/subscribeSubmit_vanilla4.js"></script>
+<script>
+  //domNodes
+  var _ss_q_checkbox = document.getElementsByClassName('ss-q-checkbox');
+  var _form = document.getElementById('ss-form');
+  var _subsribe_text = document.getElementsByClassName('subsribe_text');
+  var _dealform_filed = document.getElementsByClassName('dealform_filed');
+  var _subthankyou_text = document.getElementsByClassName('subthankyou_text')[0];
+  var _divforapp = document.getElementsByClassName('divforapp')[0];
+  var _email = document.getElementById('entry_2056924394');
 
+  function yoloKR() {
+    var glob = [];
+    for (var i = 0; i < _ss_q_checkbox.length; i++) {
+        var this_ss_q_checkbox = _ss_q_checkbox[i];
+        if (this_ss_q_checkbox.checked) {
+            glob.push(this_ss_q_checkbox.value);
+        }
+    }
+    console.log('updated glob: ', glob);
+    sweep(glob);
+    setTimeout(function() {
+        _form.reset();
+    }, 500);
+    for (var n = 0; n < _subsribe_text.length; n++) {
+        _subsribe_text[n].style.display = 'none';
+    }
+    for (var k = 0; k < _dealform_filed.length; k++) {
+        _dealform_filed[k].style.display = 'none';
+    }
+    _divforapp.style.display = 'none';
+    _subthankyou_text.style.display = 'block';
+  }
+  function sweep(glob) {
+    var emailx = _email.value;
+    var xdata = '{"sweepstakeFormId": "DODSweep1", "sweepstakeQs":["' + glob + '"], "sweepstakeAs":[], "alertEmail":"' + emailx + '"}';
+    var podata = JSON.parse(xdata);
+    console.log('podata' + JSON.stringify(podata));
+    var url = '/sweepstakesDPCall';
+    var params = JSON.stringify(podata);
+    xhr_POST(url, params);
+  }
+  function xhr_POST(url, params) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log('xhr_POST state change. . .', xhr.responseText);
+        }
+    };
+    xhr.onerror = function(err) {
+        console.log('there was an error with the POST: ', err);
+    };
+    xhr.send(params);
+  }
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    $('#entry_2056924394').click(function() {
+        $('.divforapp').show();
+        $('html, body').animate({
+            scrollTop: $(".divforapp p").offset().top
+        }, 1000);
+    });
+    var mobgetemail = getCookie('eid');
+    if (getCookie('eid')) {
+        $('#entry_2056924394').val(mobgetemail.split('"').join(''));
+    }
+  } else {
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    var mobgetemail = getCookie('eid');
+    _email.value = mobgetemail.split('"').join('');
+  }
+  var _ss_q_checkboxInputs = document.getElementsByClassName('ss-q-checkbox');
+  for (var j = 0; j < _ss_q_checkboxInputs.length; j++) {
+    var this_ss_q_checkboxInputs = _ss_q_checkboxInputs[j];
+    if (this_ss_q_checkboxInputs.checked) {
+        this_ss_q_checkboxInputs.removeAttrubute('required');
+    }
+  }
+
+</script>
 
 <!--leftNav-->
 <script type="text/javascript">

@@ -16,7 +16,9 @@
         "mobileLandingUrl":"https://m.snapdeal.com/offers/donate-on-christmas-new-year-for-underprivileged?",
         "webLandingUrl":"https://www.snapdeal.com/offers/donate-on-christmas-new-year-for-underprivileged?",
         "eventId":"NGOFooterBannerX99",
-        "filters":"",
+        "filters":[
+          "ngoOffer", "banner", "test"
+        ],
         "extraField1":"",
         "extraField2":"",
         "extraField3":"",

@@ -65,7 +65,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
               return;
             }
           }
-          if (categoryName.indexOf('bankOfferBannerX99') > -1) {
+          if (categoryName.indexOf('bankOfferBannerX99') > -1 || categoryName.indexOf('FooterBannerX99') > -1) {
             return _setHTML_BannerX99(item);
           }
           if (categoryName.indexOf('DealofDayOffers') > -1) {
@@ -163,7 +163,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
   //BannerX99
   function _setHTML_BannerX99(item) {
     //addClass ~ invisX99
-    return '<li class="invisX99 OfferUnitX99 BannerX99_unit responsiveFontSizeX99 pad06_vertical ">' + _setHTML_offerUnit_href(item) + _setHTML_offerStripUnit_offerImageOnly(item) + _setHTML_offerUnit_href_closing() + '</li>';
+    return '<li class="invisX99 OfferUnitX99 BannerX99_unit responsiveFontSizeX99 pad06_vertical " ' + _setDataOfferFilter_filter(item) + '>' + _setHTML_offerUnit_href(item) + _setHTML_offerStripUnit_offerImageOnly(item) + _setHTML_offerUnit_href_closing() + '</li>';
   }
 
   //defaultOfferLiUnit
@@ -171,7 +171,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
     if (query_sdPlus_priceSlab(item)) {
       return '';
     }
-    return '<li class="invisX99 OfferUnitX99 OffersContentBoxLi ' + _setClassName_categoryName(item) + '" ' + _setID_pogId(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing() + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
+    return '<li class="invisX99 OfferUnitX99 OffersContentBoxLi ' + _setClassName_categoryName(item) + '" ' + _setID_pogId(item) + _setDataOfferFilter_filter(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing() + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
   }
 
   //dodSuperDeals
@@ -180,7 +180,7 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
       return;
     }
     //console.log('setHTML_superDod running!');
-    return '<li class="invisX99 OfferUnitX99 dodSuperDeal_unit offerUnits_2_2 dodSuperDealUnit_ev' + _setClassName_categoryName(item) + '"' + _setID_pogId(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + setHTML_wrapCenterCont() + setHTML_centeredContX() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + setHTML_centeredContX_closing() + setHTML_wrapCenterCont_closing() + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing(item) + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
+    return '<li class="invisX99 OfferUnitX99 dodSuperDeal_unit offerUnits_2_2 dodSuperDealUnit_ev' + _setClassName_categoryName(item) + '"' + _setID_pogId(item) + _setDataOfferFilter_filter(item) + '>' + _setHTML_offerUnit_innerContWrap(item) + _set_SoldOUt_ModuleX99_mod(item) + _setHTML_offerUnit_href(item) + _setHTML_offerUnit_href_afterWrap() + _setHTML_offerUnit_offerImageOnly(item) + _setHTML_offerUnit_nonImgContWrap() + setHTML_wrapCenterCont() + setHTML_centeredContX() + _setHTML_offerUnit_title(item) + _setHTML_offerUnit_priceTaglineDiscountWrap_rel(item) + _setHTML_offerUnit_ratingWrap(item) + setHTML_centeredContX_closing() + setHTML_wrapCenterCont_closing() + _setHTML_offerUnit_nonImgContWrap_closing() + _setHTML_offerUnit_href_afterWrap_closing() + _setHTML_offerUnit_href_closing(item) + _setHTML_offerUnit_innerContWrap_closing() + '</li>';
   }
 
   //setHTML frags
@@ -204,12 +204,15 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
     if (!item) {
       return;
     }
-    var aLink_Wrap = '<a target="_blank" href="' + item.webLandingUrl + '" class="offerUnit_href">';
-    if (item.webLandingUrl) {
-      return aLink_Wrap;
+    var landingUrl = '';
+    if ((0, _MobPlatformCheck2.default)()) {
+      landingUrl = item.mobileLandingUrl ? item.mobileLandingUrl : item.webLandingUrl;
     } else {
-      return '';
+      //console.log('use web url. . .');
+      landingUrl = item.webLandingUrl;
     }
+    var aLink_Wrap = '<a target="_blank" href="' + landingUrl + '" class="offerUnit_href">';
+    return aLink_Wrap;
   }
 
   function _setHTML_offerUnit_imgWrapOnly(item) {
@@ -301,24 +304,6 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
     } else {
       return '<div class="offerUnit_imgWrap_sdPlusInc_rel">' + blazy_img + '</div>';
     }
-    /*
-    if(nonPromise === true){
-      if(sdgold){
-        return ('<div class="offerUnit_imgWrap_sdPlusInc_rel">' + sdPlusLogo + nonLazy_img + '</div>');
-      }
-      else {
-        return ('<div class="offerUnit_imgWrap_sdPlusInc_rel">' + nonLazy_img + '</div>');
-      }
-    }
-    else {
-      if(sdgold){
-        return ('<div class="offerUnit_imgWrap_sdPlusInc_rel">' + sdPlusLogo + blazy_img + '</div>');
-      }
-      else {
-        return ('<div class="offerUnit_imgWrap_sdPlusInc_rel">' + blazy_img + '</div>');
-      }
-    }
-    */
   }
 
   function _setHTML_offerUnit_nonImgContWrap() {
@@ -510,6 +495,28 @@ var createHTML_by_categoryNames = function createHTML_by_categoryNames(O_O, data
   function _setClassName_categoryName(item) {
     if (item.extraField1) {
       return item.extraField1;
+    } else {
+      return '';
+    }
+  }
+
+  function toArraySanitisedFilterTags(tagString) {
+    var regex = new RegExp(',', 'g');
+    var str_sanitised = tagString.replace(regex, '');
+    return str_sanitised.split(' ');
+  }
+
+  function _setDataOfferFilter_filter(item) {
+    if (item.filters) {
+      var filterTags_array = toArraySanitisedFilterTags(item.filters);
+      //console.log('filterTags_array: ', filterTags_array);
+      var filters = '';
+      //return item.extraField1;
+      filterTags_array.forEach(function (e) {
+        return filters += e + ' ';
+      });
+      //console.log('filters: ', filters);
+      return ' data-offerfilter="' + filters + '"';
     } else {
       return '';
     }

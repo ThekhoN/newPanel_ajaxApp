@@ -48,52 +48,36 @@ var _formErrorLogHeightDefault = _formErrorLog.style.height;
 
 _submitFormX99.addEventListener('click', validateDodFormSubmit);
 
-function resetFormError() {
-    //console.log('running reset. . .');
-    _formErrorLog.style.height = _formErrorLogHeightDefault;
-    _formErrorLog.style.opacity = 0;
-    _formErrorLog.innerHTML = '';
-}
 
 function resetFormError__(el) {
-    console.log('running reset again. . .');
-    /*
-    _formErrorLog.style.height = '0px';
-    _formErrorLog.style.opacity = 0;
-    _formErrorLog.innerHTML = '';
-    */
-
-
+    console.log('running resetFormError__. . .');
+    //don't run if
     if(getComputedStyle(el).opacity == 0){
       return;
     }
-  //fallback
     if (!transitionEvent) {
         console.log('transitionEvent/CSS Transitions not supported. . .');
-        //run style changes anyway
-        console.log('run style changes anyway. . .')
-        el.style.height = '26px';
-        el.style.opacity = 1;
+        el.style.opacity = 0;
+        el.style.height = '0px';
+        el.innerHTML = '';
         return;
     }
-    console.group('first chainTransition');
-    console.log('running chainAnim. . .');
-    //chain to run after first transition
+    el.innerHTML = '';
+    el.style.opacity = 0;
     onCSSTransitionEndX99(el, 'opacity', function() {
         el.style.height = '0px';//width of innerContent
-        onCSSTransitionEndX99(el, 'height', function() {
-            el.innerHTML = '';
-        });
     });
-    //first transition
-    el.style.opacity = 0;
-
 }
 
 
 
-function chainTransition_fadeInDisplay(el) {
-  if(getComputedStyle(el).opacity == 1){
+function chainTransition_fadeInDisplay(el, callback) {
+  if(getComputedStyle(el).height == '26px' && getComputedStyle(el).opacity == 1){
+    callback();
+    return;
+  }
+  if(getComputedStyle(el).height == '26px' && getComputedStyle(el).opacity == 1 && !el.innerHTML===''){
+    console.log('do not run chainTransition_fadeInDisplay. . .');
     return;
   }
   //fallback
@@ -103,10 +87,21 @@ function chainTransition_fadeInDisplay(el) {
         console.log('run style changes anyway. . .')
         el.style.height = '26px';
         el.style.opacity = 1;
+        if(callback){
+          callback();
+        }
         return;
     }
-    console.group('first chainTransition');
+    console.group('first chainTransition_fadeInDisplay');
     console.log('running chainAnim. . .');
+
+    if(callback){
+      console.log('callback was defined...');
+      callback();
+    }
+    //first transition
+    el.style.opacity = '0.01';
+    console.groupEnd('first chainTransition_fadeInDisplay');
     //chain to run after first transition
     onCSSTransitionEndX99(el, 'opacity', function() {
         el.style.height = '26px';//width of innerContent
@@ -114,9 +109,6 @@ function chainTransition_fadeInDisplay(el) {
             el.style.opacity = 1;
         });
     });
-    //first transition
-    el.style.opacity = '0.01';
-    console.groupEnd('first chainTransition');
 }
 
 
@@ -125,10 +117,11 @@ function validateEmail(email) {
 	    return re.test(email);
 }
 
-function appendFormError(ele, message, DomNode){
-  var newEle = document.createElement(ele);
-  newEle.innerHTML = message;
-  DomNode.appendChild(newEle);
+function setHTMLFormError(message, DomNode){
+  console.log('setHTMLFormError running . . .');
+  DomNode.innerHTML = '';
+  DomNode.innerHTML += ('<span class="formError">' + message + '</span>');
+  console.log('setHTMLFormError success . . .');
 }
 
 for (var i = 0; i < _ss_q_checkbox.length; i++) {
@@ -148,11 +141,6 @@ function validateDodFormSubmit(e) {
   var _current_formErrorLogHeight = _formErrorLog.style.height;
  _formErrorLogHeight = (_current_formErrorLogHeight > _formErrorLogHeightDefault) ? _current_formErrorLogHeight: _formErrorLogHeightDefault;
 
-  function animate_formErrorLog() {
-    _formErrorLog.style.height = '16px' + _formErrorLogHeight;
-    chainTransition_fadeInDisplay(_formErrorLog);
-  }
-
   var checkedContainerX99 = [];
   var categorySelected = false;
   for (var i = 0; i < _ss_q_checkbox.length; i++) {
@@ -164,21 +152,26 @@ function validateDodFormSubmit(e) {
 
   if(checkedContainerX99.length < 1 || categorySelected === false){
     var checkboxErrMssg = 'please choose a category. . .';
-    animate_formErrorLog();
-    appendFormError('span', checkboxErrMssg, _formErrorLog);
+    console.log('checkboxErrMssg: ', checkboxErrMssg);
+    chainTransition_fadeInDisplay(_formErrorLog, function () {
+        setHTMLFormError(checkboxErrMssg, _formErrorLog);
+    });
     return;
   }
 
   if(_email.value === ''){
     var emailUndefinedErrMssg = 'please enter your email. . .';
-    animate_formErrorLog();
-    appendFormError('span', emailUndefinedErrMssg, _formErrorLog);
+    console.log('emailUndefinedErrMssg: ', emailUndefinedErrMssg);
+    chainTransition_fadeInDisplay(_formErrorLog, function(){
+      setHTMLFormError(emailUndefinedErrMssg, _formErrorLog);
+    });
     return;
   }
   if(!validateEmail(_email.value)){
     var emailSyntaxErrMssg = 'please enter a valid email. . .';
-    animate_formErrorLog();
-    appendFormError('span', emailSyntaxErrMssg, _formErrorLog);
+    chainTransition_fadeInDisplay(_formErrorLog, function(){
+      setHTMLFormError(emailSyntaxErrMssg, _formErrorLog);
+    });
     return;
   }
   yoloKR();

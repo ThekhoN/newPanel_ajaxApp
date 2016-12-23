@@ -186,8 +186,8 @@ input[type="checkbox"]:checked + label.caption:after {
   height: 0;
   opacity: 0;
 
-  transition: all 0.3s linear;
-  -webkit-transition: all 0.3s linear;
+  transition: height 0.2s ease, opacity 0.3s linear;
+  -webkit-transition: height 0.2s ease, opacity 0.3s linear;
 
   @include breakpoint(768px){
     text-align: center;

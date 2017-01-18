@@ -187,6 +187,26 @@ output:float // For Debugging - mainWrapper should not have a bg Color
 /* ////////////////// ENDERINO RESETERINO ///////////////////// */
 
 
+//slide
+.slide-enter {
+  opacity: 0.01;
+  max-height: 0px;
+}
+.slide-enter.slide-enter-active {
+  opacity: 1;
+  max-height: 600px;
+  transition: opacity 300ms linear, max-height 200ms ease-in;
+}
+.slide-leave {
+  opacity: 1;
+  max-height: 600px;
+}
+.slide-leave.slide-leave-active {
+  opacity: 0.01;
+  max-height: 0px;
+  transition: all 500ms linear;
+}
+
 
 //debug
 /*
